@@ -55,5 +55,7 @@
   <%= @profile.blood_group %>
 </p>
 
+<%= image_tag @profile.image.url(:medium) %>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
