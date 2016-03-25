@@ -22,10 +22,11 @@
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
-                    <li>
-                     <%= link_to "LOGIN",new_user_session_path, :class => "page-scroll" %>
-                       
-                    </li>
+                      <% if current_user.present? %>
+					    <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
+					  <% else %>
+					    <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
+					  <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
