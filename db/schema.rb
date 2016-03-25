@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20160324185126) do
     t.text     "gender"
     t.text     "caste"
     t.text     "address"
-    t.integer  "mobile"
+    t.integer  "mobile",      limit: 8
     t.string   "blood_group"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -12,8 +12,11 @@
  *
  *= require_tree .
  *= require_self
+<<<<<<< Updated upstream
  *= require bootstrap.min
+=======
  *= require animate.min
  *= require creative
  *= require font-awesome.min
+>>>>>>> Stashed changes
  */

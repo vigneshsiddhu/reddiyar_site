@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.text :gender
       t.text :caste
       t.text :address
-      t.integer :mobile
+      t.integer :mobile, limit: 8
       t.string :blood_group
       t.belongs_to :user
 

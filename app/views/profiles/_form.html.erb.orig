@@ -1,0 +1,139 @@
+<<<<<<< Updated upstream
+<%= nested_form_for @profile do |f| %>
+<div class="panel-group" id="accordion">
+=======
+<%= nested_form_for(@profile) do |f| %>
+>>>>>>> Stashed changes
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Personal Details</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="field">
+          <%= f.label :name %><br>
+          <%= f.text_area :name %>
+        </div>
+        <div class="field">
+          <%= f.label :age %><br>
+          <%= f.number_field :age %>
+        </div>
+        <div class="field">
+          <%= f.label :dob %><br>
+          <%= f.date_select :dob %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br>
+          <%= f.text_area :email %>
+        </div>
+        <div class="field">
+          <%= f.label :pincode %><br>
+          <%= f.number_field :pincode %>
+        </div>
+        <div class="field">
+          <%= f.label :city %><br>
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <%= f.label :gender %><br>
+          <%= f.text_area :gender %>
+        </div>
+        <div class="field">
+          <%= f.label :caste %><br>
+          <%= f.text_area :caste %>
+        </div>
+        <div class="field">
+          <%= f.label :address %><br>
+          <%= f.text_area :address %>
+        </div>
+        <div class="field">
+          <%= f.label :mobile %><br>
+          <%= f.number_field :mobile %>
+        </div>
+        <div class="field">
+          <%= f.label :blood_group %><br>
+          <%= f.text_field :blood_group %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Family Details</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+        <%= f.fields_for :family_members do |fm| %>
+          <div class="field">
+            <%= fm.label :name %><br>
+            <%= fm.text_area :name %>
+          </div>
+          <div class="field">
+            <%= fm.label :relationship %><br>
+            <%= fm.text_field :relationship %>
+          </div>
+          <div class="field">
+            <%= fm.label :age %><br>
+            <%= fm.number_field :age %>
+          </div>
+          <div class="field">
+            <%= fm.label :email %><br>
+            <%= fm.text_area :email %>
+          </div>
+          <div class="field">
+            <%= fm.label :gender %><br>
+            <%= fm.text_field :gender %>
+          </div>
+          <%= fm.link_to_remove "Remove this member" %>
+        <% end %>
+        <%= f.link_to_add "Add another member", :family_members %>
+
+      </div>
+    </div>
+  </div>
+<%= fields_for @profile.family_members do |fm| %>
+  <div class="field">
+    <%= fm.label :name %><br>
+    <%= fm.text_area :name %>
+  </div>
+  <div class="field">
+    <%= fm.label :relationship %><br>
+    <%= fm.text_field :relationship %>
+  </div>
+  <div class="field">
+    <%= fm.label :age %><br>
+    <%= fm.number_field :age %>
+  </div>
+  <div class="field">
+    <%= fm.label :email %><br>
+    <%= fm.text_area :email %>
+  </div>
+  <div class="field">
+    <%= fm.label :gender %><br>
+    <%= fm.text_field :gender %>
+  </div>
+<% end %>
+<%= f.link_to_add 'Add family member', :family_members %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+</div> 
+<% end %>

@@ -19,6 +19,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+
+    binding.pry
     @profile = current_user.profile
   end
 
