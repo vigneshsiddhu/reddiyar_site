@@ -4,8 +4,10 @@ source 'https://rubygems.org'
 gem 'devise'
 # Nested form 
 gem 'nested_form'
-# Debug 
+# Debugger - Console level
 gem 'pry'
+# Paperclip for handling attachments
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record

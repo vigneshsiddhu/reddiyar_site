@@ -12,6 +12,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.text :address
       t.integer :mobile, limit: 8
       t.string :blood_group
+      t.attachment :image
       t.belongs_to :user
 
       t.timestamps null: false
