@@ -1,163 +1,202 @@
-<div class="container">
-    <h1>Edit Profile</h1>
-    <hr>
-  <div class="row">
-    <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          <%= f.file_field :image %>
-          <!-- <input type="file" class="form-control"> -->
-        </div>
-      </div>
-    <!-- edit form column -->
-    <div class="col-md-9 personal-info">
-        <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          Please Enter Your<strong>Profile</strong>
-        </div>
-        <div id="accordion">
-            <% if @profile.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<p id="notice"><%= notice %></p>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #1FAE66;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Trichy Reddiars Community</a>
+            </div>
 
-                <ul>
-                <% @profile.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                      <% if current_user.present? %>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
             <% end %>
-            <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details</a></h3>
-            <div id="collapse1" >
-              <div class="form-group">
-                  <label class="col-lg-3 control-label">Name:</label>
-                  <%#= f.label :name,:class => "col-lg-3 control-label" %>
-                  <div class="col-lg-8">
-                  <%= f.text_field :name,:class => "form-control" %>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Age:</label>
-                <div class="col-lg-8">
-                <%= f.number_field :age,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">DOB:</label>
-                <div class="col-lg-8">
-                <%= f.date_select :dob,{},{:class => "form-control"} %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Email</label>
-                <div class="col-lg-8">
-                <%= f.text_field :email,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Pincode:</label>
-                <div class="col-lg-8">
-                <%= f.number_field :pincode,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">City:</label>
-                <div class="col-lg-8">
-                <%= f.text_field :city,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Gender:</label>
-                  <div class="col-lg-8">
-                    <div class="ui-select">
-                    <%#= f.text_field :gender,:class => "form-control" %>
-                    <%= f.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
-                    </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Caste:</label>
-                <div class="col-lg-8">
-                <%= f.text_field :caste %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Address:</label>
-                <div class="col-lg-8">
-                <%= f.text_area :address,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Mobile</label>
-                <div class="col-lg-8">
-                <%= f.number_field :mobile,:class => "form-control" %>
-                </div>
-              </div>
-              <div class="form-group">
-                 <label class="col-lg-3 control-label">Blood Group:</label>
-                  <div class="col-lg-8">
-                    <div class="ui-select">
-                    <%#= f.text_field :gender,:class => "form-control" %>
-                    <%= f.select :blood_group,[["select","select"],["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control"} %>
-                    </div>
-                  </div>
-              </div>
-          </div>
-              <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details</a></h3>
-            <div id="collapse2" class="panel-collapse collapse">
-              <div class="panel-body">
-                <%= f.fields_for :family_members do |fm| %>
-                  <div class="form-group">
-                  <label class="col-lg-3 control-label">Name:</label>
-                  <%#= f.label :name,:class => "col-lg-3 control-label" %>
-                    <div class="col-lg-8">
-                    <%= fm.text_field :name,:class => "form-control" %>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-3 control-label">Relationship:</label>
-                    <div class="col-lg-8">
-                    <%= fm.text_field :relationship,:class => "form-control" %>
-                  </div>
-                  </div>
-                   <div class="form-group">
-                    <label class="col-lg-3 control-label">Age:</label>
-                    <div class="col-lg-8">
-                    <%= fm.number_field :age,:class => "form-control" %>
-                    </div>
-                  </div>
-                   <div class="form-group">
-                    <label class="col-lg-3 control-label">Email:</label>
-                    <div class="col-lg-8">
-                    <%= fm.text_field :email,:class => "form-control" %>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-3 control-label">Gender:</label>
-                      <div class="col-lg-8">
-                        <div class="ui-select">
-                        <%#= f.text_field :gender,:class => "form-control" %>
-                        <%= fm.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row" style = "margin-top: 62px">
+    <div class="vd_content clearfix">
+    <div class="vd_content-section clearfix">
+              <div class="row">
+                <div class="col-lg-15" style="background:#ffffff">
+                  <div class="panel widget light-widget panel-bd-top">
+                      <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
+                        <!-- left column -->
+                        <div class="col-md-3">
+                          <div class="text-center">
+                            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                            <h6>Upload a different photo...</h6>
+                            <%= f.file_field :image %>
+                            <!-- <input type="file" class="form-control"> -->
+                          </div>
                         </div>
-                      </div>
+                      <!-- edit form column -->
+                      <div class="col-md-9 personal-info">
+                         
+                          <div id="accordion">
+                              <% if @profile.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+                                  <ul>
+                                  <% @profile.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                  <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                              <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details</a></h3>
+                              <div id="collapse1" >
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label">Name:</label>
+                                    <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                                    <div class="col-lg-8">
+                                    <%= f.text_field :name,:class => "form-control" %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Age:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.number_field :age,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">DOB:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.date_select :dob,{},{:class => "form-control"} %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Email</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_field :email,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Pincode:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.number_field :pincode,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">City:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_field :city,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Gender:</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.text_field :gender,:class => "form-control" %>
+                                      <%= f.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Caste:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_field :caste %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Address:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_area :address,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Mobile</label>
+                                  <div class="col-lg-8">
+                                  <%= f.number_field :mobile,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                   <label class="col-lg-3 control-label">Blood Group:</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.text_field :gender,:class => "form-control" %>
+                                      <%= f.select :blood_group,[["select","select"],["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details</a></h3>
+                              <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <%= f.fields_for :family_members do |fm| %>
+                                    <div class="form-group">
+                                    <label class="col-lg-3 control-label">Name:</label>
+                                    <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                                      <div class="col-lg-8">
+                                      <%= fm.text_field :name,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Relationship:</label>
+                                      <div class="col-lg-8">
+                                      <%= fm.text_field :relationship,:class => "form-control" %>
+                                    </div>
+                                    </div>
+                                     <div class="form-group">
+                                      <label class="col-lg-3 control-label">Age:</label>
+                                      <div class="col-lg-8">
+                                      <%= fm.number_field :age,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                     <div class="form-group">
+                                      <label class="col-lg-3 control-label">Email:</label>
+                                      <div class="col-lg-8">
+                                      <%= fm.text_field :email,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Gender:</label>
+                                        <div class="col-lg-8">
+                                          <div class="ui-select">
+                                          <%#= f.text_field :gender,:class => "form-control" %>
+                                          <%= fm.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <%= fm.link_to_remove "Remove this member"%>
+                                  <% end %>
+                                  <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %> <br />
+                                  <hr />
+                                  <div class="actions">
+                                    <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div> 
+                    </div>
                   </div>
-                  <%= fm.link_to_remove "Remove this member"%>
-                <% end %>
-                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %> <br />
-                <hr />
-                <div class="actions">
-                  <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                  </div>
                 </div>
               </div>
+            </div>
           </div>
-      </div>
-    </div> 
-  </div>
-</div>
+
 <% end %>
 
 <style>
