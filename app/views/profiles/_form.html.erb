@@ -1,115 +1,263 @@
-<%= nested_form_for @profile do |f| %>
-<div class="panel-group" id="accordion">
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Personal Details</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">
-        <div class="field">
-          <%= f.label :name %><br>
-          <%= f.text_area :name %>
-        </div>
-        <div class="field">
-          <%= f.label :age %><br>
-          <%= f.number_field :age %>
-        </div>
-        <div class="field">
-          <%= f.label :dob %><br>
-          <%= f.date_select :dob %>
-        </div>
-        <div class="field">
-          <%= f.label :email %><br>
-          <%= f.text_area :email %>
-        </div>
-        <div class="field">
-          <%= f.label :pincode %><br>
-          <%= f.number_field :pincode %>
-        </div>
-        <div class="field">
-          <%= f.label :city %><br>
-          <%= f.text_field :city %>
-        </div>
-        <div class="field">
-          <%= f.label :gender %><br>
-          <%= f.text_area :gender %>
-        </div>
-        <div class="field">
-          <%= f.label :caste %><br>
-          <%= f.text_area :caste %>
-        </div>
-        <div class="field">
-          <%= f.label :address %><br>
-          <%= f.text_area :address %>
-        </div>
-        <div class="field">
-          <%= f.label :mobile %><br>
-          <%= f.number_field :mobile %>
-        </div>
-        <div class="field">
-          <%= f.label :blood_group %><br>
-          <%= f.text_field :blood_group %>
-        </div>
-        <div class="field">
-          <%= f.label :image %><br>
+<div class="container">
+    <h1>Edit Profile</h1>
+    <hr>
+  <div class="row">
+    <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
           <%= f.file_field :image %>
+          <!-- <input type="file" class="form-control"> -->
         </div>
       </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Family Details</a>
-      </h4>
-    </div>
-    <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">
-        <%= f.fields_for :family_members do |fm| %>
-          <div class="field">
-            <%= fm.label :name %><br>
-            <%= fm.text_area :name %>
-          </div>
-          <div class="field">
-            <%= fm.label :relationship %><br>
-            <%= fm.text_field :relationship %>
-          </div>
-          <div class="field">
-            <%= fm.label :age %><br>
-            <%= fm.number_field :age %>
-          </div>
-          <div class="field">
-            <%= fm.label :email %><br>
-            <%= fm.text_area :email %>
-          </div>
-          <div class="field">
-            <%= fm.label :gender %><br>
-            <%= fm.text_field :gender %>
-          </div>
-          <%= fm.link_to_remove "Remove this member" %>
-        <% end %>
-        <%= f.link_to_add "Add another member", :family_members %>
+    <!-- edit form column -->
+    <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          Please Enter Your<strong>Profile</strong>
+        </div>
+        <div id="accordion">
+            <% if @profile.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
+                <ul>
+                <% @profile.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details</a></h3>
+            <div id="collapse1" >
+              <div class="form-group">
+                  <label class="col-lg-3 control-label">Name:</label>
+                  <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                  <div class="col-lg-8">
+                  <%= f.text_field :name,:class => "form-control" %>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Age:</label>
+                <div class="col-lg-8">
+                <%= f.number_field :age,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">DOB:</label>
+                <div class="col-lg-8">
+                <%= f.date_select :dob,{},{:class => "form-control"} %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email</label>
+                <div class="col-lg-8">
+                <%= f.text_field :email,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Pincode:</label>
+                <div class="col-lg-8">
+                <%= f.number_field :pincode,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">City:</label>
+                <div class="col-lg-8">
+                <%= f.text_field :city,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Gender:</label>
+                  <div class="col-lg-8">
+                    <div class="ui-select">
+                    <%#= f.text_field :gender,:class => "form-control" %>
+                    <%= f.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                    </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Caste:</label>
+                <div class="col-lg-8">
+                <%= f.text_field :caste %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Address:</label>
+                <div class="col-lg-8">
+                <%= f.text_area :address,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Mobile</label>
+                <div class="col-lg-8">
+                <%= f.number_field :mobile,:class => "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                 <label class="col-lg-3 control-label">Blood Group:</label>
+                  <div class="col-lg-8">
+                    <div class="ui-select">
+                    <%#= f.text_field :gender,:class => "form-control" %>
+                    <%= f.select :blood_group,[["select","select"],["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control"} %>
+                    </div>
+                  </div>
+              </div>
+          </div>
+              <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details</a></h3>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                <%= f.fields_for :family_members do |fm| %>
+                  <div class="form-group">
+                  <label class="col-lg-3 control-label">Name:</label>
+                  <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                    <div class="col-lg-8">
+                    <%= fm.text_field :name,:class => "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Relationship:</label>
+                    <div class="col-lg-8">
+                    <%= fm.text_field :relationship,:class => "form-control" %>
+                  </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="col-lg-3 control-label">Age:</label>
+                    <div class="col-lg-8">
+                    <%= fm.number_field :age,:class => "form-control" %>
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                    <%= fm.text_field :email,:class => "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-3 control-label">Gender:</label>
+                      <div class="col-lg-8">
+                        <div class="ui-select">
+                        <%#= f.text_field :gender,:class => "form-control" %>
+                        <%= fm.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                        </div>
+                      </div>
+                  </div>
+                  <%= fm.link_to_remove "Remove this member"%>
+                <% end %>
+                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %> <br />
+                <hr />
+                <div class="actions">
+                  <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                </div>
+              </div>
+          </div>
       </div>
-    </div>
+    </div> 
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-</div> 
+</div>
 <% end %>
+
+<style>
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+  
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+/***********************
+  GRADIENT BUTTONS
+************************/
+.btn-primary.gradient {
+    background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-primary.gradient:hover, .btn-primary.gradient:focus, .btn-primary.gradient:active, .btn-primary.gradient.active, .open > .dropdown-toggle.btn-primary {
+    background: -moz-linear-gradient(top,  #66b2cc 50%, #33a6cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#66b2cc), color-stop(50%,#33a6cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #66b2cc 50%,#33a6cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b2cc', endColorstr='#33a6cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-primary.gradient:active, .btn-primary.gradient.active {
+    background: -moz-linear-gradient(top,  #267c99 50%, #007299 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#267c99), color-stop(50%,#007299)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #267c99 50%,#007299 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #267c99 50%,#007299 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
+}
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+
+.btn {
+    padding: 9px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}</style>

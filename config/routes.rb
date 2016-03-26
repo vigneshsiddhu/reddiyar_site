@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index1' => 'home#index1' 
   get 'home/index2' => 'home#index2'
-
+  get 'home/index3' => 'home#index3'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -19,7 +19,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-
     @profile = current_user.profile
   end
 
