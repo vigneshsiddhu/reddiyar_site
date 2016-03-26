@@ -1,35 +1,132 @@
 <p id="notice"><%= notice %></p>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #1FAE66;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Trichy Reddiars Community</a>
+            </div>
 
-<h1>Listing Family Members</h1>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                      <% if current_user.present? %>
+              <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
+            <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+</nav>
+<body id="pages" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="pages " data-smooth-scrolling="1" style="margin-top: 45px;">
+<div class="vd_body">
+<!-- Header Start -->
+  
+  <!-- Header Ends --> 
+  <div class="content">
+    <div class="container">
+              
+      <!-- Middle Content Start -->
+      
+      <div class="vd_content-wrapper">
+        <div class="vd_container">
+          <div class="vd_content clearfix">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Relationship</th>
-      <th>Age</th>
-      <th>Email</th>
-      <th>Gender</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+           <!--  <div class="vd_title-section clearfix">
+              <div class="vd_panel-header no-subtitle">
+                <h1>User Profile Page</h1>
+              </div>
+            </div> -->
+            <div class="vd_content-section clearfix">
+              <div class="row">
+                <div class="col-sm-3">
 
-  <tbody>
-    <% @family_members.each do |family_member| %>
-      <tr>
-        <td><%= family_member.name %></td>
-        <td><%= family_member.relationship %></td>
-        <td><%= family_member.age %></td>
-        <td><%= family_member.email %></td>
-        <td><%= family_member.gender %></td>
-        <td><%= link_to 'Show', family_member %></td>
-        <td><%= link_to 'Edit', edit_family_member_path(family_member) %></td>
-        <td><%= link_to 'Destroy', family_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                  <!-- panel widget -->
+                  
+                  <div class="panel widget light-widget">
+                    
+                  </div>
+                  <!-- panel widget --> 
+                </div>
+                <div class="col-sm-9">
+                  <div class="tabs widget">
+                    <ul class="nav nav-tabs widget">
+                      <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                      <li><%= link_to 'Family Member ',family_members_path,{:class => 'menu-active'} %></li>
+                      <li> <a data-toggle="tab" href="#photos-tab"> Groups <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                      <li> <a data-toggle="tab" href="#friends-tab"> Family Relationship <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="profile-tab" class="tab-pane active">
+                        <div class="pd-20">
+                                  
+                            <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-user"></i> ABOUT</h3>
+                          <div class="row">
+                          <% @family_members.each do |family_member| %>
+                                <div class="col-sm-6">
+                                  <div class="row mgbt-xs-0">
+                                    <label class="col-xs-5 control-label">Name:</label>
+                                    <div class="col-xs-7 controls"><%= family_member.name %></div>
+                                    <!-- col-sm-10 --> 
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="row mgbt-xs-0">
+                                    <label class="col-xs-5 control-label">Email:</label>
+                                    <div class="col-xs-7 controls"> <%= family_member.email %></div>
+                                    <!-- col-sm-10 --> 
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="row mgbt-xs-0">
+                                    <label class="col-xs-5 control-label">Age</label>
+                                    <div class="col-xs-7 controls"> <%= family_member.age %></div>
+                                    <!-- col-sm-10 --> 
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="row mgbt-xs-0">
+                                    <label class="col-xs-5 control-label">Relationship:</label>
+                                    <div class="col-xs-7 controls"><%= family_member.relationship %></div>
+                                    <!-- col-sm-10 --> 
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="row mgbt-xs-0">
+                                    <label class="col-xs-5 control-label">Gender:</label>
+                                    <div class="col-xs-7 controls"><%= family_member.gender%></div>
+                                    <!-- col-sm-10 --> 
+                                  </div>
+                                </div>  
+                            <% end %>
+                            <br />
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div> 
 
-<br>
 
-<%= link_to 'New Family member', new_family_member_path %>
