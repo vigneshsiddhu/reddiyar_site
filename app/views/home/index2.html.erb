@@ -1,0 +1,89 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Trichy Reddiars Community</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                      <% if current_user.present? %>
+					    <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
+					  <% else %>
+					    <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
+					  <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+</nav>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<div class="container admin_Bg">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="profileArea">
+				<img class="profileImg" src="http://vendroid.venmond.com/img/avatar/big.jpg">
+				<h2 class="semiBold">Mariah Caraiban</h2>
+				<h4>Owner at Our Company, Inc.</h4>
+				<p>Ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+				<div class="profileTable">
+					<table class="table table-striped table-hover">
+						<tbody>
+							<tr>
+								<td style="width:60%;">Status</td>
+								<td><span class="label label-warning">Active</span></td>
+							</tr>
+							<tr>
+								<td>User Rating</td>
+								<td><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i><i class="fa fa-star vd_yellow fa-fw"></i></td>
+							</tr>
+							<tr>
+								<td>Member Since</td>
+								<td> Jan 07, 2014 </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="adminTabArea">
+				<div class="bs-example">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#sectionA">Section A</a></li>
+						<li><a data-toggle="tab" href="#sectionB">Section B</a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="sectionA" class="tab-pane fade in active">
+							<h3>Section A</h3>
+							<p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+						</div>
+						<div id="sectionB" class="tab-pane fade">
+							<h3>Section B</h3>
+							<p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
