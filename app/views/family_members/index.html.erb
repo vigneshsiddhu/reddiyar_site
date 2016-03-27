@@ -15,12 +15,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
+                    <li><%= link_to 'Profile', edit_profile_path(@profile), :method => :delete, :class => "page-scroll" %></li>
                       <% if current_user.present? %>
               <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
             <% else %>
@@ -104,6 +99,7 @@
                     <div class="tab-content">
                       <div id="profile-tab" class="tab-pane active">
                         <div class="pd-20">
+                        <div class="vd_info tr"><span class="fa fa-spinner fa-spin"></span><%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-default btn-md" %></div>
                             <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> Family Members</h3>
                           <div class="row">
                           <% @family_members.each do |family_member| %>
@@ -142,9 +138,8 @@
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div> 
+                         <hr />
                             <% end %>
-                            <br />
-                            </div>
                         </div>
                       </div>
                     </div>
