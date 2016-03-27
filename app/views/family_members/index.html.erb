@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #1FAE66;">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -101,43 +101,44 @@
                         <div class="vd_info tr"><span class="fa fa-spinner fa-spin"></span><%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-default btn-md" %></div>
                             <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> Family Members</h3>
                           <div class="row">
-                          <% @family_members.each do |family_member| %>
-                                <div class="col-sm-6">
+                          <% @family_members.each_with_index do |family_member,i| %>
+                                <div class="col-sm-12">
+                                <br />
+                                  <label class="control-label">Family Member:</label> <%= i +1 %>
                                   <div class="row mgbt-xs-0">
                                     <label class="col-xs-5 control-label">Name:</label>
                                     <div class="col-xs-7 controls"><%= family_member.name %></div>
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                   <div class="row mgbt-xs-0">
                                     <label class="col-xs-5 control-label">Email:</label>
                                     <div class="col-xs-7 controls"> <%= family_member.email %></div>
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                   <div class="row mgbt-xs-0">
                                     <label class="col-xs-5 control-label">Age</label>
                                     <div class="col-xs-7 controls"> <%= family_member.age %></div>
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                   <div class="row mgbt-xs-0">
                                     <label class="col-xs-5 control-label">Relationship:</label>
                                     <div class="col-xs-7 controls"><%= family_member.relationship %></div>
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                   <div class="row mgbt-xs-0">
                                     <label class="col-xs-5 control-label">Gender:</label>
                                     <div class="col-xs-7 controls"><%= family_member.gender%></div>
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div> 
-                         <hr />
                             <% end %>
                         </div>
                       </div>
