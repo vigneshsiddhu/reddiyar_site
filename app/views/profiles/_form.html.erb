@@ -33,7 +33,7 @@
         <!-- /.container-fluid -->
 </nav>
 <div class="container">
-    <div class="row" style = "margin-top: 62px">
+    <div class="row" style = "margin-top: 2%">
     <div class="vd_content clearfix">
     <div class="vd_content-section clearfix">
               <div class="row">
@@ -41,9 +41,10 @@
                   <div class="panel widget light-widget panel-bd-top">
                       <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
                         <!-- left column -->
-                        <div class="col-md-3">
+                        <div class="col-md-3" style="margin-top: 10%;">
                           <div class="text-center">
-                            <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                            <!-- <img src="//placehold.it/100" class="avatar img-circle" alt="avatar"> -->
+                            <%= image_tag @profile.image.url(:medium) %>
                             <h6>Upload a different photo...</h6>
                             <%= f.file_field :image %>
                             <!-- <input type="file" class="form-control"> -->
@@ -52,7 +53,7 @@
                       <!-- edit form column -->
                       <div class="col-md-9 personal-info">
                          
-                          <div id="accordion">
+                          <div id="accordion" style="margin-top: 5%;">
                               <% if @profile.errors.any? %>
                                 <div id="error_explanation">
                                   <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -64,7 +65,7 @@
                                   </ul>
                                 </div>
                               <% end %>
-                              <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details</a></h3>
+                              <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
                               <div id="collapse1" >
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label">Name:</label>
@@ -108,7 +109,7 @@
                                     <div class="col-lg-8">
                                       <div class="ui-select">
                                       <%#= f.text_field :gender,:class => "form-control" %>
-                                      <%= f.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                                      <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
                                       </div>
                                     </div>
                                 </div>
@@ -135,12 +136,12 @@
                                     <div class="col-lg-8">
                                       <div class="ui-select">
                                       <%#= f.text_field :gender,:class => "form-control" %>
-                                      <%= f.select :blood_group,[["select","select"],["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control"} %>
+                                      <%= f.select :blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control", :include_blank => 'Choose your bloog group'} %>
                                       </div>
                                     </div>
                                 </div>
                             </div>
-                                <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details</a></h3>
+                                <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
                               <div id="collapse2" class="panel-collapse collapse">
                                 <div class="panel-body">
                                   <%= f.fields_for :family_members do |fm| %>
@@ -180,13 +181,14 @@
                                     </div>
                                     <%= fm.link_to_remove "Remove this member"%>
                                   <% end %>
-                                  <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %> <br />
-                                  <hr />
-                                  <div class="actions">
-                                    <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
-                                  </div>
+                                  <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
+                                  <br/>
                                 </div>
                             </div>
+                                  <br/>
+                                  <div class="actions pull-right">
+                                    <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                                  </div>
                         </div>
                       </div> 
                     </div>

@@ -1,5 +1,6 @@
 class FamilyMembersController < ApplicationController
   before_action :set_family_member, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /family_members
   # GET /family_members.json
