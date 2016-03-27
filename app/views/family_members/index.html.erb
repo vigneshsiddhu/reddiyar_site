@@ -104,6 +104,7 @@
                     <div class="tab-content">
                       <div id="profile-tab" class="tab-pane active">
                         <div class="pd-20">
+                        <div class="vd_info tr"><span class="fa fa-spinner fa-spin"></span><%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-default btn-md" %></div>
                             <h3 class="mgbt-xs-15 mgtp-10 font-semibold"> Family Members</h3>
                           <div class="row">
                           <% @family_members.each do |family_member| %>
@@ -142,9 +143,8 @@
                                     <!-- col-sm-10 --> 
                                   </div>
                                 </div> 
+                         <hr />
                             <% end %>
-                            <br />
-                            </div>
                         </div>
                       </div>
                     </div>
