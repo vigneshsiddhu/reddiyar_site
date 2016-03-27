@@ -15,7 +15,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><%= link_to 'Profile', edit_profile_path(@profile), :method => :delete, :class => "page-scroll" %></li>
                       <% if current_user.present? %>
               <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
             <% else %>
@@ -91,7 +90,7 @@
                 <div class="col-sm-9">
                   <div class="tabs widget">
                     <ul class="nav nav-tabs widget">
-                      <li> <a data-toggle="tab" href="#profile-tab"> Profile </a></li>
+                    <li><%= link_to 'Profile ',edit_profile_path(@profile),{:class => 'menu-active'} %></li>
                       <li class="active"><%= link_to 'Family Member ',family_members_path,{:class => 'menu-active'} %></li>
                       <li> <a data-toggle="tab" href="#photos-tab"> Groups <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
                       <li> <a data-toggle="tab" href="#friends-tab"> Family Relationship <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
