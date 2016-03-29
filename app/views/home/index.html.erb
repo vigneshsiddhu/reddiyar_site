@@ -16,11 +16,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
                     
                       <% if current_user.present? %>
+                    <li>
+                         <li><%= link_to 'Profile', profile_path(@profile), :class => "page-scroll" %></li>
+                    </li>
 					    <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
 					  <% else %>
 					    <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
@@ -37,7 +37,7 @@
             <div class="header-content-inner">
                 <h1> Reddiars Community Begins</h1>
                 <hr>
-                <p>This Portal Will Help To Share Information Between Reddiars pepole And Help To Connect People </p>
+                <p>This Portal Will Help To Share Information Between Reddiars people And Help To Connect People And Its Makes Group Of People Living In The Same Place </p>
                 <%= link_to 'SINGUP HERE', new_user_registration_path, :class => "btn btn-primary btn-xl page-scroll" %>
             </div>
         </div>

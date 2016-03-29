@@ -115,8 +115,22 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">Father Name:</label>
+                    <div class="col-xs-7 controls"><%= @profile.father_name %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
                     <label class="col-xs-5 control-label">Email:</label>
                     <div class="col-xs-7 controls"> <%= @profile.email %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">Username:</label>
+                    <div class="col-xs-7 controls"><%=  @profile.user.username%></div>
                     <!-- col-sm-10 --> 
                   </div>
                 </div>
@@ -157,6 +171,13 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">Residence Address:</label>
+                    <div class="col-xs-7 controls"><%= @profile.address %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
                     <label class="col-xs-5 control-label">Phone:</label>
                     <div class="col-xs-7 controls"><%= @profile.mobile %></div>
                     <!-- col-sm-10 --> 
@@ -171,8 +192,29 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Username:</label>
-                    <div class="col-xs-7 controls"><%=  @profile.user.username%></div>
+                    <label class="col-xs-5 control-label">Occupation:</label>
+                    <div class="col-xs-7 controls"><%= @profile.occupation %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">eduction:</label>
+                    <div class="col-xs-7 controls"><%= @profile.education %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">Married Status:</label>
+                    <div class="col-xs-7 controls"><%= @profile.married_status %></div>
+                    <!-- col-sm-10 --> 
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="row mgbt-xs-0">
+                    <label class="col-xs-5 control-label">Office Address:</label>
+                    <div class="col-xs-7 controls"><%= @profile.office_address %></div>
                     <!-- col-sm-10 --> 
                   </div>
                 </div>

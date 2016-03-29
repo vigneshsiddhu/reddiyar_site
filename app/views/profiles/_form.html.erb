@@ -45,6 +45,11 @@
                             <!-- <input type="file" class="form-control"> -->
                           </div>
                         </div>
+                        <br/>
+                        <div class="actions pull-right">
+                                    <%#= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                            <%= link_to 'Back TO Profile', profile_path(@profile), :class => "btn btn-success" %>
+                        </div>
                       <!-- edit form column -->
                       <div class="col-md-9 personal-info">
                          
@@ -67,6 +72,13 @@
                                     <%#= f.label :name,:class => "col-lg-3 control-label" %>
                                     <div class="col-lg-8">
                                     <%= f.text_field :name,:class => "form-control" %>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label">Father name:</label>
+                                    <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                                    <div class="col-lg-8">
+                                    <%= f.text_field :father_name,:class => "form-control" %>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -100,6 +112,12 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
+                                  <label class="col-lg-3 control-label">Education:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_field :education,:class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
                                   <label class="col-lg-3 control-label">Gender:</label>
                                     <div class="col-lg-8">
                                       <div class="ui-select">
@@ -108,14 +126,20 @@
                                       </div>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                   <label class="col-lg-3 control-label">Married Status:</label>
                                     <div class="col-lg-8">
                                       <div class="ui-select">
-                                      <%#= f.text_field :gender,:class => "form-control" %>
-                                       <%#= f.select :married_status,[["select", "select"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control"} %>
+                                      
+                                       <%= f.select :married_status,[["SELECT", "SELECT"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control"} %>
                                       </div>
                                     </div>
+                                </div>
+                               <!--  <div class="form-group">
+                                  <label class="col-lg-3 control-label">Anniversary Date:</label>
+                                  <div class="col-lg-8">
+                                  <%#= f.date_select :anniversary_date,:start_year=>1900,:html => {:class => "form-control"}%>
+                                  </div>
                                 </div> -->
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label">Caste:</label>
@@ -124,7 +148,7 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-lg-3 control-label">Address:</label>
+                                  <label class="col-lg-3 control-label">Residence Address:</label>
                                   <div class="col-lg-8">
                                   <%= f.text_area :address,:class => "form-control" %>
                                   </div>
@@ -135,23 +159,19 @@
                                   <%= f.number_field :mobile,:class => "form-control" %>
                                   </div>
                                 </div>
-                                <!-- <div class="form-group">
+                               <div class="form-group">
                                   <label class="col-lg-3 control-label">Occupation</label>
                                     <div class="col-lg-8">
                                       <div class="ui-select">
-                                      <%#= f.text_field :gender,:class => "form-control" %>
-                                      <%#= f.select :occupation,[["select", "select"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control"} %>
+                                      <%= f.select :occupation,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control"} %>
                                       </div>
                                     </div>
-                                </div> -->
+                                </div> 
                                 <div class="form-group">
-                                  <label class="col-lg-3 control-label">Education</label>
-                                    <div class="col-lg-8">
-                                      <div class="ui-select">
-                                      <%#= f.text_field :gender,:class => "form-control" %>
-                                      <%= f.select :education,[["select", "select"],["",""],["",""]],{},{:class => "form-control"} %>
-                                      </div>
-                                    </div>
+                                  <label class="col-lg-3 control-label">Office Address:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_area :office_address,:class => "form-control" %>
+                                  </div>
                                 </div>
                                 <div class="form-group">
                                    <label class="col-lg-3 control-label">Blood Group:</label>
