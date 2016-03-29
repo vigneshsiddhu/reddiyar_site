@@ -108,6 +108,15 @@
                                       </div>
                                     </div>
                                 </div>
+                                <!-- <div class="form-group">
+                                  <label class="col-lg-3 control-label">Married Status:</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.text_field :gender,:class => "form-control" %>
+                                       <%#= f.select :married_status,[["select", "select"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
+                                </div> -->
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label">Caste:</label>
                                   <div class="col-lg-8">
@@ -125,6 +134,24 @@
                                   <div class="col-lg-8">
                                   <%= f.number_field :mobile,:class => "form-control" %>
                                   </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                  <label class="col-lg-3 control-label">Occupation</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.text_field :gender,:class => "form-control" %>
+                                      <%#= f.select :occupation,[["select", "select"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Education</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.text_field :gender,:class => "form-control" %>
+                                      <%= f.select :education,[["select", "select"],["",""],["",""]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                    <label class="col-lg-3 control-label">Blood Group:</label>
