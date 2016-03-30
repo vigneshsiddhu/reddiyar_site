@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'home/index1' => 'home#index1' 
   get 'home/index2' => 'home#index2'
   get 'home/index3' => 'home#index3'
+  post 'home/index2' => 'home#index2'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
