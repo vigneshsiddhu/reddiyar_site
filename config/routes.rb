@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_roles
   devise_for :users
   resources :family_members
   resources :profiles
