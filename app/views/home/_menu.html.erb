@@ -12,8 +12,17 @@
    <a href="mailto:info@rockfortreddiars.com"> <i class="fa fa-envelope" style="font-size:22px;  color:#2c93d5;"></i> &nbsp; info@rockfortreddiars.com  </a>
     </div>
 <div class="col-md-3 text-right" style="padding-top:10px;">
-<a href="#" class="btn btn-success " data-toggle="modal" data-target="#sign-up-modal"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-<a href="#" class="btn btn-success " data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> login</a>
+<% if current_user.present? %>
+  <%= link_to  profile_path(@profile), :class => "btn btn-success", :style => "color:#fff" do %>
+  <span class="glyphicon glyphicon-user"></span> Profile
+  <% end %>
+  <%= link_to destroy_user_session_path, :method => :delete, :class => "btn btn-success", :style => "color:#fff" do %>
+  <span class="glyphicon glyphicon-log-in"></span> logout 
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path,:class => "btn btn-success",:style => "color:#fff" do %>
+  <span class="glyphicon glyphicon-log-in"></span> login  <% end %>
+<% end %>
 </div>    
 
 </div>
@@ -54,3 +63,42 @@
 </nav>
 </div>
 </div>
+
+<style type="text/css">
+  /* ----------------  Nav Bar Start ------------------------------------- */
+
+.navbar {
+  border:none !important;
+  }
+
+.navbar-fixed-top {
+    min-height: 100px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 100px;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav > li > a {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;}
+
+  #brand-logo {
+    height:40px !important;
+    width:126px !important;
+    vertical-align:top;
+    padding-top:0px !important;
+    margin:0px !important;
+    }
+
+  #social-header{
+    display:none;
+    }
+
+}
+
+</style>

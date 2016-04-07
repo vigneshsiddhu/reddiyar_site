@@ -15,7 +15,7 @@ display: block;
 #footer {
 	background-color:#21252b; 
 	padding:20px; 
-	border-top:5px solid #2c93d5;
+	border-top:5px solid #1b9859;
 	}
 
 
@@ -34,41 +34,6 @@ display: block;
 	}
 
 
-/* ----------------  Nav Bar Start ------------------------------------- */
-
-.navbar {
-	border:none !important;
-	}
-
-.navbar-fixed-top {
-    min-height: 100px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 100px;
-}
-
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;}
-
-	#brand-logo {
-		height:40px !important;
-		width:126px !important;
-		vertical-align:top;
-		padding-top:0px !important;
-		margin:0px !important;
-		}
-
-	#social-header{
-		display:none;
-		}
-
-}
 
 
 
