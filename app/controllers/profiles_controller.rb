@@ -13,6 +13,15 @@ class ProfilesController < ApplicationController
   def show
   end
 
+  def search 
+    if params["name"].present? || params["pincode"].present?
+      @profiles_pin = Profile.where("name LIKE? OR pincode LIKE?", "%#{params["name"]}%","%#{params["pincode"]}%")
+    end
+    # @profiles_pin = Profile.where(:pincode => params["pincode"]) if params["pincode"].present?
+    @profile = current_user.profile if current_user.present?
+    @profiles = Profile.all
+  end
+
   # GET /profiles/new
   def new
     @profile = Profile.new
