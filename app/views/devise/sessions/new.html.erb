@@ -6,8 +6,8 @@
               <%= form_for(resource,:html => { :class =>"form-signin"},as: resource_name, url: session_path(resource_name)) do |f| %>
               <span id="reauth-email" class="reauth-email"></span>
                 <div class="field">
-                  <%= f.label :username %><br />
-                  <%= f.text_field :username,:class => "form-control", autofocus: true,:placeholder => "User Name" %>
+                  <%= f.label :email %><br />
+                  <%= f.text_field :email,:class => "form-control", autofocus: true,:placeholder => "User Name" %>
                 </div>
                 
                 <div class="field">
