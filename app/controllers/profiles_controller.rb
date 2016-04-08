@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :search]
   before_action :authenticate_user!
   before_filter :set_paper_trail_whodunnit
   # GET /profiles
@@ -13,13 +13,8 @@ class ProfilesController < ApplicationController
   def show
   end
 
-  def search 
-    if params["name"].present? || params["pincode"].present?
-      @profiles_pin = Profile.where("name LIKE? OR pincode LIKE?", "%#{params["name"]}%","%#{params["pincode"]}%")
-    end
-    # @profiles_pin = Profile.where(:pincode => params["pincode"]) if params["pincode"].present?
-    @profile = current_user.profile if current_user.present?
-    @profiles = Profile.all
+  def search
+    @profiles = Profile.where("name LIKE ?", "%#{params["name"]}%")
   end
 
   # GET /profiles/new
@@ -69,10 +64,6 @@ class ProfilesController < ApplicationController
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def search
-    @profiles = Profile.where("name LIKE ?", "%#{params[:name]}%")
   end
 
   private

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/search' => 'profiles#search'
   devise_for :users
   resources :family_members
   resources :profiles
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-  get 'search' => 'profiles#search'
   get 'home/index2' => 'home#index2'
 
   post 'home/index2' => 'home#index2'
