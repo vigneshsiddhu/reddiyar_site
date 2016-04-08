@@ -71,6 +71,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def search
+    @profiles = Profile.where("name LIKE ?", "%#{params[:name]}%")
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
