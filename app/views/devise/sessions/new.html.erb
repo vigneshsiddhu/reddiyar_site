@@ -4,6 +4,7 @@
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
               <%= form_for(resource,:html => { :class =>"form-signin"},as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= devise_error_messages! %>
               <span id="reauth-email" class="reauth-email"></span>
                 <div class="field">
                   <%= f.label :email %><br />
