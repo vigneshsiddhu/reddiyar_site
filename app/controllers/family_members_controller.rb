@@ -7,6 +7,7 @@ class FamilyMembersController < ApplicationController
   def index
     @profile = current_user.profile
     @family_members = @profile.family_members
+    @family_members_profile = Profile.where(id: current_user.family_members.pluck(:member_id))
   end
 
   # GET /family_members/1

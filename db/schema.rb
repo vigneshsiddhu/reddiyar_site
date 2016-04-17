@@ -13,29 +13,51 @@
 
 ActiveRecord::Schema.define(version: 20160404165015) do
 
+  create_table "educations", force: :cascade do |t|
+    t.text     "institution"
+    t.text     "type_of_education"
+    t.text     "specialisation"
+    t.date     "year_of_completion"
+    t.text     "city"
+    t.text     "achievements"
+    t.integer  "profile_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "family_members", force: :cascade do |t|
-    t.text     "name"
-    t.string   "relationship"
-    t.integer  "age"
-    t.text     "email"
-    t.string   "gender"
+    t.text     "relationship"
+    t.integer  "member_id"
+    t.boolean  "approved"
     t.integer  "profile_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.integer  "pin_code_1"
+    t.text     "city_1"
+    t.text     "district_1"
+    t.text     "address_1"
+    t.integer  "pin_code_2"
+    t.text     "city_2"
+    t.text     "district_2"
+    t.text     "address_2"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.text     "name"
-    t.integer  "age"
+    t.integer  "mobile",             limit: 8
     t.date     "dob"
-    t.text     "email"
-    t.integer  "pincode"
-    t.string   "city"
     t.text     "gender"
     t.text     "caste"
-    t.text     "address"
-    t.integer  "mobile",             limit: 8
     t.string   "blood_group"
+    t.string   "marital_status"
+    t.integer  "height"
+    t.integer  "weight"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -43,12 +65,6 @@ ActiveRecord::Schema.define(version: 20160404165015) do
     t.integer  "user_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.string   "office_address"
-    t.string   "father_name"
-    t.date     "anniversary_date"
-    t.string   "occupation"
-    t.string   "education"
-    t.string   "married_status"
   end
 
   create_table "users", force: :cascade do |t|

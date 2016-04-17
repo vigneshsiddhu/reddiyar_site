@@ -67,26 +67,14 @@
                                 </div>
                               <% end %>
                               <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-pencil"></i> Personal Details <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
-                              <div id="collapse1" >
+                              <div id="collapse1" class='panel-collapse collapse in'>
+                              <div class="panel-body">
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label">Name:</label>
                                     <%#= f.label :name,:class => "col-lg-3 control-label" %>
                                     <div class="col-lg-8">
-                                    <%= f.text_field :name,:class => "form-control" %>
+                                    <%= f.text_field :name, :class => "form-control" %>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Father name:</label>
-                                    <%#= f.label :name,:class => "col-lg-3 control-label" %>
-                                    <div class="col-lg-8">
-                                    <%= f.text_field :father_name,:class => "form-control" %>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Age:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.number_field :age,:class => "form-control" %>
-                                  </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label">DOB:</label>
@@ -95,83 +83,31 @@
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-lg-3 control-label">Email</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_field :email,:class => "form-control" %>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Pincode:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.number_field :pincode,:class => "form-control" %>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">City:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_field :city,:class => "form-control" %>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Education:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_field :education,:class => "form-control" %>
-                                  </div>
-                                </div>
-                                <div class="form-group">
                                   <label class="col-lg-3 control-label">Gender:</label>
                                     <div class="col-lg-8">
                                       <div class="ui-select">
-                                      <%#= f.text_field :gender,:class => "form-control" %>
                                       <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
                                       </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                  <label class="col-lg-3 control-label">Caste:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.text_field :caste, :class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
                                   <label class="col-lg-3 control-label">Married Status:</label>
                                     <div class="col-lg-8">
                                       <div class="ui-select">
-                                      
-                                       <%= f.select :married_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control",:id => "married_status"} %>
+                                        <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control",:id => "marital_status"} %>
                                       </div>
                                     </div>
-                                </div>
-                                <div class="form-group" id = "anniversary_date">
-                                  <label class="col-lg-3 control-label">Anniversary Date:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.date_select :anniversary_date,:start_year=>1900,:html => {:class => "form-control"}%>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Caste:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_field :caste %>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Residence Address:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_area :address,:class => "form-control" %>
-                                  </div>
                                 </div>
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label">Mobile</label>
                                   <div class="col-lg-8">
-                                  <%= f.number_field :mobile,:class => "form-control" %>
-                                  </div>
-                                </div>
-                               <div class="form-group">
-                                  <label class="col-lg-3 control-label">Occupation</label>
-                                    <div class="col-lg-8">
-                                      <div class="ui-select">
-                                      <%= f.select :occupation,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control"} %>
-                                      </div>
-                                    </div>
-                                </div> 
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label">Office Address:</label>
-                                  <div class="col-lg-8">
-                                  <%= f.text_area :office_address,:class => "form-control" %>
+                                  <%= f.number_field :mobile, :class => "form-control" %>
                                   </div>
                                 </div>
                                 <div class="form-group">
@@ -183,44 +119,109 @@
                                       </div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Height:</label>
+                                  <div class="col-lg-8">
+                                  <%= f.number_field :height, :class => "form-control" %>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-lg-3 control-label">Weight</label>
+                                  <div class="col-lg-8">
+                                  <%= f.number_field :weight, :class => "form-control" %>
+                                  </div>
+                                </div>
+                              </div>
+                               <!-- <div class="form-group">
+                                  <label class="col-lg-3 control-label">Occupation</label>
+                                    <div class="col-lg-8">
+                                      <div class="ui-select">
+                                      <%#= f.select :occupation,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control"} %>
+                                      </div>
+                                    </div>
+                                </div>  -->
                             </div>
-                                <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Family Details <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
+                            <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-pencil"></i> Education <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
                               <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <%= f.fields_for :educations do |ed| %>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Institution Name:</label>
+                                      <div class="col-lg-8">
+                                        <%= ed.text_field :institution,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Year of Completion:</label>
+                                      <div class="col-lg-8">
+                                        <%= ed.date_select :year_of_completion,:start_year=>1900,:html => {:class => "form-control"}%>
+                                      </div>
+                                    </div>
+                                      <div class="form-group">
+                                        <label class="col-lg-3 control-label">Education Type:</label>
+                                        <div class="col-lg-8">
+                                          <%= ed.text_field :type_of_education,:class => "form-control" %>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label class="col-lg-3 control-label">City:</label>
+                                        <div class="col-lg-8">
+                                          <%= ed.text_field :city,:class => "form-control" %>
+                                        </div>
+                                      </div>
+                                      <%= ed.link_to_remove "Remove this detail"%>
+                                    <% end %>
+                                    <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary"  %>
+                                </div>
+                              </div>
+                            <h3 ><a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><i class="fa fa-pencil"></i> Location <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
+                              <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                  <%= f.fields_for :location do |loc| %>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Pincode:</label>
+                                      <div class="col-lg-8">
+                                        <%= loc.number_field :pin_code_1,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">City:</label>
+                                      <div class="col-lg-8">
+                                        <%= loc.text_field :city_1,:start_year=>1900,:html => {:class => "form-control"}%>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">District:</label>
+                                      <div class="col-lg-8">
+                                        <%= loc.text_field :district_1,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="col-lg-3 control-label">Address:</label>
+                                      <div class="col-lg-8">
+                                        <%= loc.text_field :address_1,:class => "form-control" %>
+                                      </div>
+                                    </div>
+                                    <%= loc.link_to_remove "Remove this detail"%>
+                                    <% end %>
+                                    <%= f.link_to_add "Add Location details",:location, :class => "btn btn-primary"  %>
+                                </div>
+                              </div>  
+                            <h3><a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><i class="fa fa-pencil"></i> Family Details <span class="pull-right"><i class="fa fa-chevron-down"></i></span></a></h3>
+                              <div id="collapse3" class="panel-collapse collapse">
                                 <div class="panel-body">
                                   <%= f.fields_for :family_members do |fm| %>
                                     <div class="form-group">
-                                    <label class="col-lg-3 control-label">Name:</label>
-                                    <%#= f.label :name,:class => "col-lg-3 control-label" %>
+                                      <label class="col-lg-3 control-label">Name:</label>
                                       <div class="col-lg-8">
-                                      <%= fm.text_field :name,:class => "form-control" %>
+                                        <%= fm.select :member_id,options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }),{:class => "form-control"} %>
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Relationship:</label>
                                       <div class="col-lg-8">
-                                      <%= fm.text_field :relationship,:class => "form-control" %>
-                                    </div>
-                                    </div>
-                                     <div class="form-group">
-                                      <label class="col-lg-3 control-label">Age:</label>
-                                      <div class="col-lg-8">
-                                      <%= fm.number_field :age,:class => "form-control" %>
+                                        <%= fm.text_field :relationship,:class => "form-control" %>
                                       </div>
-                                    </div>
-                                     <div class="form-group">
-                                      <label class="col-lg-3 control-label">Email:</label>
-                                      <div class="col-lg-8">
-                                      <%= fm.text_field :email,:class => "form-control" %>
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label class="col-lg-3 control-label">Gender:</label>
-                                        <div class="col-lg-8">
-                                          <div class="ui-select">
-                                          <%#= f.text_field :gender,:class => "form-control" %>
-                                          <%= fm.select :gender,[["select","select"],["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
-                                          </div>
-                                        </div>
                                     </div>
                                     <%= fm.link_to_remove "Remove this member"%>
                                   <% end %>
@@ -230,7 +231,7 @@
                             </div>
                                   <br/>
                                   <div class="actions pull-right">
-                                    <%= f.submit "Create Profile",:class => "btn btn-success",:style => "text-al" %>
+                                    <%= f.submit "Update Profile",:class => "btn btn-success",:style => "text-al" %>
                                   </div>
                         </div>
                       </div> 
@@ -243,23 +244,6 @@
           </div>
 
 <% end %>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.form-group').change(function() {
-    $('#anniversary_date').hide();
-    var status,getstatus;
-    status = document.getElementById("married_status").value
-    getstatus = "Married"
-    if (status == getstatus){ 
-      $('#anniversary_date').show();
-      }
-    else
-      {
-      $('#anniversary_date').Hide();
-      }
-    });
-  });
-</script>
 
 <style>
 .btn {
