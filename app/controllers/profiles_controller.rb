@@ -12,11 +12,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @profile = current_user.profile
+    @profile = Profile.find(params[:id])
     @profiles = Profile.where.not(user_id: current_user.id)
-  end
-
-  def user_list
   end
   
   def search
@@ -28,6 +25,23 @@ class ProfilesController < ApplicationController
       @profiles = Profile.where(verified: false)
     else
       return false
+    end
+  end
+
+  def family_list
+    @family = []
+    family = current_user.profile.family_members
+    profile = Profile.where(id: family.pluck(:member_id))
+    family.each_with_index do |fam, i|
+      member = {
+        'name' => profile[i].name,
+        'email' =>  profile[i].user.email,
+        'relationship' => fam.relationship,
+        'gender' => profile[i].gender,
+        'dob' => profile[i].dob, 
+        'image' => profile[i].image
+      }
+      @family << member
     end
   end
 

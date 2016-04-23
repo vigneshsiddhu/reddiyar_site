@@ -19,35 +19,36 @@
 	        	<div class="panel-body">
 	        		<div class="panel list-group">
                 <div class="content">
-                  <div class="row">
+                <% @family.each do |family| %>
                       <div class="col-md-4">
                         <div class="card">
-                            <%= image_tag "Unknown-person.jpg" %>
                             
                             <div class="row">
-                              <div class="col-xs-12"> <a class="btn  btn-xs btn-block "><i class="fa fa-check-circle append-icon"></i>Profile Image</a> </div>
+                              <div class="col-xs-12"> 
+                            <%= image_tag(family['image'], width: '100%') %>
+                              <a class="btn  btn-xs btn-block "><i class="fa fa-check-circle append-icon"></i>Profile Image</a> </div>
                             </div>
-                            <h3>vignesh<%#= @profile.name %></h3>
-                            <h5>vineshsiddhu94@gmail.com<%#= @profile.user.email %></h5>
+                            <h3><%= family['name'] %></h3>
+                            <h5><%= family['email'] %></h5>
                             <table class="table table-striped table-hover">
                               <tbody>
                                 <tr>
-                                  <td style="width:60%;">Status</td>
-                                  <td><span class="label label-success">Active</span></td>
+                                  <td style="width:60%;">Birthday</td>
+                                  <td><%= (family['dob']).strftime("%B %d") %></td>
                                 </tr>
                                 <tr>
-                                  <td>Last Updated</td>
-                                  <td><%= Time.now.strftime("%m/%d/%Y") %></td>
+                                  <td>Relationship</td>
+                                  <td><%= family['relationship'] %></td>
                                 </tr>
                                 <tr>
                                   <td>Gender</td>
-                                  <td> Male<%#= @profile.gender %></td>
+                                  <td><%= family['gender'] %></td>
                                 </tr>
                               </tbody>
                             </table>
                         </div>
                       </div>
-                  </div>
+                  <% end %>
                 </div>
 	        		</div>
 						</div>
