@@ -13,6 +13,9 @@ class ProfilesController < ApplicationController
   def show
   end
 
+  def user_list
+  end
+  
   def search
     @profiles = Profile.where("name LIKE ?", "%#{params["name"]}%")
   end
