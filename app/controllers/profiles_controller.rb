@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @profile = current_user.profile
+    @profiles = Profile.where.not(user_id: current_user.id)
   end
 
   def search
@@ -75,6 +77,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_members_attributes:[:member_id, :relationship, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], location_attributes:[:pin_code_1, :city_1, :district_1, :address_1, :id, :_destroy])
+      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_members_attributes:[:member_id, :relationship, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], location_attributes:[:pin_code, :city, :district, :address, :type, :id, :_destroy])
     end
 end

@@ -38,14 +38,11 @@ class CreateProfiles < ActiveRecord::Migration
     end
 
     create_table :locations do |t|
-      t.integer :pin_code_1
-      t.text :city_1
-      t.text :district_1
-      t.text :address_1
-      t.integer :pin_code_2
-      t.text :city_2
-      t.text :district_2
-      t.text :address_2
+      t.integer :pin_code
+      t.text :city
+      t.text :district
+      t.text :address
+      t.text :address_type
       t.belongs_to :profile
 
       t.timestamps null: false

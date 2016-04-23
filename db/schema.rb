@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404165015) do
+ActiveRecord::Schema.define(version: 20160421173831) do
 
   create_table "educations", force: :cascade do |t|
     t.text     "institution"
@@ -35,17 +35,14 @@ ActiveRecord::Schema.define(version: 20160404165015) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.integer  "pin_code_1"
-    t.text     "city_1"
-    t.text     "district_1"
-    t.text     "address_1"
-    t.integer  "pin_code_2"
-    t.text     "city_2"
-    t.text     "district_2"
-    t.text     "address_2"
+    t.integer  "pin_code"
+    t.text     "city"
+    t.text     "district"
+    t.text     "address"
+    t.text     "address_type"
     t.integer  "profile_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -65,6 +62,13 @@ ActiveRecord::Schema.define(version: 20160404165015) do
     t.integer  "user_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.integer  "role"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
