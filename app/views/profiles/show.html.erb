@@ -1,267 +1,224 @@
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #1FAE66;">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand page-scroll" href="#page-top">Trichy Reddiars Community</a>
+<%= render 'home/headertop' %>
+<%= render 'home/sidemenu' %>
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+  <form role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a class="page-scroll" href="#about">About</a>
+  </form>
+  
+  <ul class="nav" id="side-menu">
+    <li>
+            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Basic Information<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="flot.html">Education Details</a>
+                </li>
+                <li>
+                    <a href="morris.html">Personal Details</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
         </li>
         <li>
-          <a class="page-scroll" href="#services">Services</a>
+            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile Settings<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="flot.html">Personal Info</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
         </li>
-        <% if current_user.present? %>
-        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
-        <% else %>
-        <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
-        <% end %>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
-<body id="pages" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="pages " data-smooth-scrolling="1" style="margin-top: 45px;">
-  <div class="vd_body">
-    <!-- Header Start -->
+        <li>
+            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</a>
+        </li>
 
-    <!-- Header Ends --> 
-    <div class="content">
-      <div class="container">
+  </ul>
 
-        <!-- Middle Content Start -->
-
-        <div class="vd_content-wrapper">
-        <div class="">
-            <div class="vd_content clearfix">
-
-<!--  <div class="vd_title-section clearfix">
-<div class="vd_panel-header no-subtitle">
-<h1>User Profile Page</h1>
-</div>
-</div> -->
-<div class="vd_content-section clearfix">
+</div><!--/.sidebar-->
+  
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
   <div class="row">
-    <div class="col-sm-3">
-      <div class="panel widget light-widget panel-bd-top">
-        <div class="panel-heading no-title"> </div>
-        <div class="panel-body">
-          <div class="text-center vd_info-parent"><%= image_tag @profile.image.url(:medium) %>
-          </div>
-          <div class="row">
-            <div class="col-xs-12"> <a class="btn vd_btn vd_bg-green btn-xs btn-block no-br"><i class="fa fa-check-circle append-icon"></i>Profile Image</a> </div>
-          </div>
-          <h2 class="font-semibold mgbt-xs-5"><%= @profile.name %></h2>
-          <h4><%= @profile.user.email %></h4>
-          <p><%#= @profile.address %></p>
-          <div class="mgtp-20">
-            <table class="table table-striped table-hover">
-              <tbody>
-                <tr>
-                  <td style="width:60%;">Status</td>
-                  <td><span class="label label-success">Active</span></td>
-                </tr>
-                <tr>
-                  <td>Last Updated</td>
-                  <td><%= Time.now.strftime("%m/%d/%Y") %></td>
-                </tr>
-                <tr>
-                  <td>Gender</td>
-                  <td> <%= @profile.gender %></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <!-- panel widget -->
-
-      <div class="panel widget light-widget">
-
-      </div>
-      <!-- panel widget --> 
-    </div>
-    <div class="col-sm-9">
-      <div class="tabs widget">
-        <ul class="nav nav-tabs widget">
-          <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-          <li><%= link_to 'Family Member ',family_members_path(@profile),{:class => 'menu-active'} %></li>
-          <li> <a data-toggle="tab" href="#photos-tab"> Groups <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-          <li> <a data-toggle="tab" href="#friends-tab"> Family Relationship <span class="menu-active"><i class="fa fa-caret-up"></i></span> </a></li>
-        </ul>
-        <div class="tab-content">
-          <div id="profile-tab" class="tab-pane active">
-            <div class="pd-20">
+    <ol class="breadcrumb">
               <div class="vd_info tr"><span class="fa fa-spinner fa-spin"></span><%= link_to 'Edit Profile', edit_profile_path, :class => "btn btn-default btn-md" %></div> 
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li class="active">Icons</li>
+    </ol>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Dashboard</h1>
+    </div>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="menu1" class="admin_leftNav">
+          <div class="panel list-group">
+            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA1" data-parent="#menu1">Basic Info <span class="label label-info">5</span> </a>
+            <div class="panel-body">
+              <div id="RA1" class="sublinks collapse in">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                    <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
+                      <% if @profile.errors.any? %>
+                       <div id="error_explanation">
+                         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-              <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="fa fa-user"></i> ABOUT</h3>
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Full Name:</label>
-                    <div class="col-xs-7 controls"><%= @profile.name%></div>
-                    <!-- col-sm-10 --> 
+                         <ul>
+                         <% @profile.errors.full_messages.each do |message| %>
+                           <li><%= message %></li>
+                         <% end %>
+                         </ul>
+                       </div>
+                      <% end %>
+                      <label>Name</label>
+                      <%= f.text_field :name, :class => "form-control",:placeholder => "First Name" %>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Email:</label>
-                    <div class="col-xs-7 controls"> <%= @profile.user.email %></div>
-                    <!-- col-sm-10 --> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                       <label>Date of Birth</label>
+                       <input class="form-control" type="text" placeholder="click to show datepicker" id="example1">
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Birthday:</label>
-                    <div class="col-xs-7 controls"><%= @profile.dob %></div>
-                    <!-- col-sm-10 --> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                       <label>Gender</label>
+                         <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">City:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.location.city_1 %></div>
-                    <!-- col-sm-10 --> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                       <label>Married Status:</label>
+                         <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control",:id => "marital_status"} %>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Country:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.city %></div>
-                    <!-- col-sm-10 --> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                       <label>Mobile</label>
+                         <%= f.number_field :mobile, :class => "form-control" %>
+                    </div>
                   </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Pincode:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.location.pincode_1 %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Residence Address:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.location.address_1 %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Phone:</label>
-                    <div class="col-xs-7 controls"><%= @profile.mobile %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Gender:</label>
-                    <div class="col-xs-7 controls"><%= @profile.gender %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">eduction:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.education %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Married Status:</label>
-                    <div class="col-xs-7 controls"><%= @profile.marital_status %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Office Address:</label>
-                    <div class="col-xs-7 controls"><%#= @profile.location.address_2 %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Blood Group:</label>
-                    <div class="col-xs-7 controls"><%= @profile.blood_group %></div>
-                    <!-- col-sm-10 --> 
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="row mgbt-xs-0">
-                    <label class="col-xs-5 control-label">Caste:</label>
-                    <div class="col-xs-7 controls"> <%= @profile.caste %></div>
-                    <!-- col-sm-10 --> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                       <label>Blood Group:</label>
+                         <%= f.select :blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control", :include_blank => 'Choose your bloog group'} %>
+                    </div>
                   </div>
                 </div>
               </div>
-
-
-
-              <!-- row --> 
             </div>
-            <!-- pd-20 --> 
+            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA2" data-parent="#menu1">Educational Info</a>
+            <div class="panel-body">
+            <%= f.fields_for :educations do |ed| %>
+              <div id="RA2" class="sublinks collapse">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Institution Name:</label>
+                       <%= ed.text_field :institution,:class => "form-control",:placeholder => "Institution" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Year of Completion:</label>
+                       <%= ed.text_field :year_of_completion,:class => "form-control",:placeholder => "Year of Completion" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Education Type:</label>
+                       <%= ed.text_field :type_of_education,:class => "form-control",:placeholder => "Type of Education" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>City:</label>
+                       <%= ed.text_field :city,:class => "form-control",:placeholder => "City" %>
+                    </div>
+                  </div>
+                  <%= ed.link_to_remove "Remove this detail"%>
+                  <% end %>
+                  <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary"  %>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
+            <div class="panel-body">
+            <%= f.fields_for :location do |loc| %>
+              <div id="RA3" class="sublinks collapse">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Pincode:</label>
+                       <%= loc.text_field :pin_code_1,:class => "form-control",:placeholder => "Pincode" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>City:</label>
+                       <%= loc.text_field :city_1,:class => "form-control",:placeholder => "City" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>District:</label>
+                       <%= loc.text_field :district_1,:class => "form-control",:placeholder => "District" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Address:</label>
+                       <%= loc.text_field :address_1,:class => "form-control",:placeholder => "Address" %>
+                    </div>
+                  </div>
+                  <%= loc.link_to_remove "Remove this detail"%>
+                   <% end %>
+                   <%= f.link_to_add "Add Location details",:location, :class => "btn btn-primary"  %>
+                </div>
+              </div>
+            </div>
+           <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Educational Info</a>
+            <div class="panel-body">
+            <%= f.fields_for :family_members do |fm| %>
+              <div id="RA4" class="sublinks collapse">
+                <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Name:</label>
+                       <%= fm.select :member_id,options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }),{:class => "form-control"} %>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label>Relationship:</label>
+                       <%= fm.text_field :relationship,:class => "form-control" %>
+                    </div>
+                  </div>
+                  <%= fm.link_to_remove "Remove this member"%>
+                  <% end %>
+                  <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
+                </div>
+              </div>
+            </div>            
           </div>
-          <!-- home-tab -->
-        </div> 
-        <!-- tab-content --> 
-      </div>
-      <!-- tabs-widget -->           
+        </div>
+        <% end %>
     </div>
-  </div>
-  <!-- row --> 
-
-</div>
-<!-- .vd_content-section --> 
-
-</div>
-<!-- .vd_content --> 
-</div>
-<!-- .vd_container --> 
-</div>
-<!-- .vd_content-wrapper --> 
-
-<!-- Middle Content End --> 
-
-</div>
-<!-- .container --> 
-</div>
-<!-- Footer Start --><!-- 
-<footer class="footer-1" id="footer">      
-<div class="vd_bottom ">
-<div class="container">
-<div class="row">
-<div class=" col-xs-12">
-<div class="copyright">
-Copyright ©2014 Venmond Inc. All Rights Reserved 
-</div>
-</div>
-</div>
-<!-- </div>
-<!-- </div>
-</footer> --> 
-<!-- Footer END -->
-
-
-<div class="container-fluid" id="footer" >
-<div class="row"> 
-    <div class="col-sm-12 text-center"> 
-    <a href="#">About Us </a> <span class="footer-pipe"> | </span> <a href="#"> Members List </a> <span class="footer-pipe"> | </span> <a href="#"> Gallery </a> <span class="footer-pipe"> | </span> <a href="#"> News and Events </a> <span style="color:#CCC; margin:15px"> | </span> <a href="#"> Contact Us</a> </div>
-
-</div>
-</div>
-</div>
-<!-- Specific Page Scripts END -->
-<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
-<!-- .content -->
-</body>
+  </div><!--/.row-->
+  
+  
+</div>  <!--/.main-->
+<script type="text/javascript">
+      // When the document is ready
+      $(document).ready(function () {
+          
+          $('#example1').datepicker({
+              format: "dd/mm/yyyy"
+          });  
+      
+      });
+  </script>
