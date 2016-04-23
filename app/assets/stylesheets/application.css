@@ -19,5 +19,7 @@
  *= require login
  *= require style
  *= require font-awesome
- *= require select2
+ *= sb-admin-2
+ *= datepicker
+ *= metisMenu.min
  */

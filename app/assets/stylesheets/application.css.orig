@@ -12,11 +12,18 @@
  *
  *= require_tree .
  *= require_self
-<<<<<<< Updated upstream
  *= require bootstrap.min
-=======
  *= require animate.min
  *= require creative
  *= require font-awesome.min
->>>>>>> Stashed changes
+ *= require login
+ *= require style
+ *= require font-awesome
+<<<<<<< HEAD
+ *= require select2
+=======
+ *= sb-admin-2
+ *= datepicker
+ *= metisMenu.min
+>>>>>>> 020bb2ae8d0ac61e4848dfd7cf9ab0ec477df1b7
  */

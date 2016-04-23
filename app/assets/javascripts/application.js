@@ -21,5 +21,8 @@
 //= require_tree .
 //= require jquery_nested_form
 //= require bootstrap.min
+//= require metisMenu.min
+//= require sb-admin-2
+//= require bootstrap-datepicker
 //= require login
 //= require select2
