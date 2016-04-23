@@ -1,105 +1,64 @@
-  <p id="notice"><%= notice %></p>
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background-color: #1FAE66;">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand page-scroll" href="#page-top">Trichy Reddiars Community</a>
-      </div>
+<%= render 'home/headertop' %>
+<%= render 'home/sidemenu' %>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-
-          <% if current_user.present? %>
-          <li><%= link_to 'Profile', profile_path(@profile), :class => "page-scroll" %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "page-scroll" %></li>
-          <% else %>
-          <li><%= link_to 'Login', new_user_session_path, :class => "page-scroll" %></li>
-          <% end %>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div> 
-  </nav>
-  <!-- /.container-fluid -->
-  <body id="pages" class="full-layout  nav-right-hide nav-right-start-hide  nav-top-fixed      responsive    clearfix" data-active="pages " data-smooth-scrolling="1" style="margin-top: 45px;">
-    <div class="vd_body">
-      <!-- Header Start -->
-
-      <!-- Header Ends --> 
-      <div class="content">
-        <div class="container">
-
-          <!-- Middle Content Start -->
-
-          <div class="vd_content-wrapper">
-            <div class="">
-              <div class="vd_content clearfix">
-
-  <!--  <div class="vd_title-section clearfix">
-  <div class="vd_panel-header no-subtitle">
-  <h1>User Profile Page</h1>
-  </div>
-</div> -->
-<div class="vd_content-section clearfix">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
   <div class="row">
-    <div class="col-sm-3">
-      <div class="panel widget light-widget panel-bd-top">
-        <div class="panel-heading no-title"> </div>
-        <div class="panel-body">
-          <div class="text-center vd_info-parent">
-            <%= form_tag("/search", method: "post", :class => 'comment_form') do %>
-            <%= label_tag(:name, "Name:") %>
-            <%= text_field_tag(:name) %>
-            <hr />
-            <%= submit_tag("Search") %>
-            <% end %>
-          </div>
-
-        </div>
-      </div>
-      <!-- panel widget -->
-
-      <div class="panel widget light-widget">
-
-      </div>
-      <!-- panel widget --> 
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li class="active">Profile</li>
+    </ol>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">My Profile</h1>
     </div>
-    <div class="col-sm-9">
-      <div class="panel widget light-widget panel-bd-top">
-        <div class="panel-heading no-title"> </div>
-        <div class="panel-body">
-        <% @profiles.each do |profile| %>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <% @profiles.each do |profile| %>
+      <div class="col-md-11">
+        <div class = "card">
           <div class="row">
-            <div class="col-md-4">
-            <%= image_tag profile.image.url(:small) %>
+            <div class="col-md-3">
+            <div class="author">
+              <%= image_tag(profile.image, :class => "avatar") %>
             </div>
-            <div class= "col-md-3">
-              <strong><p>Profile Name: </p></strong>
-              <strong><p>Gender: </p></strong>
-              <strong><p>Email: </p></strong>
             </div>
-            <div class= "col-md-3">
-              <p><%= profile.name %></p>
-              <p><%= profile.gender %></p>
-              <p><%= profile.email %></p>
-            </div>
+            <div class="col-md-7">
+              <div class="row mgbt-xs-0">
+                <label class="col-xs-3 control-label">Name:</label>
+                <div class="col-xs-7 controls"><%= profile.name %></div>
+                <!-- col-sm-10 --> 
+              </div>
 
+
+              <div class="row mgbt-xs-0">
+                <label class="col-xs-3 control-label">Email:</label>
+                <div class="col-xs-7 controls"><%= profile.user.email %></div>
+                <!-- col-sm-10 --> 
+              </div>
+
+              <div class="row mgbt-xs-0">
+                <label class="col-xs-3 control-label">Gender:</label>
+                <div class="col-xs-7 controls"><%= profile.gender %></div>
+                <!-- col-sm-10 --> 
+              </div>
+
+              <div class="row mgbt-xs-0">
+                <label class="col-xs-3 control-label">Address:</label>
+                <div class="col-xs-8 controls"><%#= profile.address.first %></div>
+                <!-- col-sm-10 --> 
+              </div>
+            </div>
+            <div class="col-md-2">
+              <%= link_to 'View Profile', profile_path(profile), :class => "btn btn-info btn-fill_show" %>
+              <!-- <button type="submit" class="btn btn-info btn-fill_show pull-right" style="margin: 5% 0;">Verify Profile</button>
+              <button type="submit" class="btn btn-info btn-fill_show pull-right" style="margin: 5% 0;">Check Profile</button> -->
+            </div>
           </div>
-        <% end %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-</body>
-
-
-
+    <% end %>
+  </div><!--/.row-->
+</div>  <!--/.main-->

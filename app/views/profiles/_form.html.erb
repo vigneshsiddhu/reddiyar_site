@@ -5,7 +5,7 @@
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-      <li>Profile</li>
+      <li><%= link_to 'Profile', profile_path(@profile) %></li>
       <li class="active">Edit</li>
     </ol>
   </div><!--/.row-->
@@ -45,19 +45,19 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                          <label>Date of Birth</label>
-                         <input class="form-control" type="text" placeholder="click to show datepicker" id="example1">
+                         <%= f.text_field :dob, :class => "form-control dob", :placeholder => "Select your Date of birth" %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                          <label>Gender</label>
-                           <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
+                           <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control select1"} %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                          <label>Married Status:</label>
-                           <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control",:id => "marital_status"} %>
+                           <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control select1",:id => "marital_status"} %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -69,7 +69,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                          <label>Blood Group:</label>
-                           <%= f.select :blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control", :include_blank => 'Choose your bloog group'} %>
+                           <%= f.select :blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control select1", :include_blank => 'Choose your bloog group'} %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                          <label>Profile Image:</label>
+                          <%= f.file_field :image %>
                       </div>
                     </div>
                   </div>
@@ -89,7 +95,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Year of Completion:</label>
-                         <%= ed.text_field :year_of_completion,:class => "form-control",:placeholder => "Year of Completion" %>
+                         <%= ed.text_field :year_of_completion,:class => "form-control dob", :placeholder => "Year of Completion" %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -113,7 +119,7 @@
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
               <div class="panel-body">
                 <div id="RA3" class="sublinks collapse">
-                <%= f.fields_for :location do |loc| %>
+                <%= f.fields_for :locations do |loc| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
@@ -148,26 +154,58 @@
                     <%= loc.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Location details",:location, :class => "btn btn-primary"  %>
+                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-primary"  %>
                 </div>
               </div>
-             <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Family Members</a>
+              <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Occupation Info</a>
               <div class="panel-body">
                 <div id="RA4" class="sublinks collapse">
+                <%= f.fields_for :occupations do |occ| %>
+                  <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Organisation Name:</label>
+                         <%= occ.text_field :organisation, :class => "form-control", :placeholder => "Organisation" %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Category:</label>
+                         <%= occ.text_field :category, :class => "form-control dob", :placeholder => "Occupation Category" %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Position:</label>
+                         <%= occ.text_field :position, :class => "form-control", :placeholder => "Your position" %>
+                      </div>
+                    </div>
+                    <%= occ.link_to_remove "Remove this detail"%>
+                  </div>
+                <% end %>
+                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-primary"  %>
+                </div>
+              </div>
+              <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA5" data-parent="#menu1">Family Members</a>
+              <div class="panel-body">
+                <div id="RA5" class="sublinks collapse">
                 <%= f.fields_for :family_members do |fm| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Name:</label>
-                         <%= fm.select :member_id, options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }), :class => "form-control" %>
+                         <%= fm.select :member_id, options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }), {}, {:class => "form-control select2_search"} %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Relationship:</label>
-                         <%= fm.text_field :relationship, :class => "form-control" %>
+                        <%= fm.select :relationship, [["Father", "Father"],["Mother", "Mother"],["Brother(Elder)", "Brother(Elder)"],["Brother(Younger)", "Brother(Younger)"],["Sister(Elder)", "Sister(Elder)"],["Sister(Younger)", "Sister(Younger)"]],{},{:class => "form-control select1"} %>
                       </div>
                     </div>
+                    <script type="text/javascript">
+                      $('.select2_search').select2({theme: "bootstrap"});
+                    </script>
                     <%= fm.link_to_remove "Remove this member"%>
                   </div>
                 <% end %>
@@ -178,6 +216,18 @@
           </div>
       </div>
     </div><!--/.row-->
-    <%= submit_tag 'submit' %>
+    <%= submit_tag 'submit', :class => 'btn btn-primary' %>
   <% end %>
 </div>  <!--/.main-->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.select1').select2({
+      theme: "bootstrap",
+      minimumResultsForSearch: -1
+    });
+    $('.dob').datetimepicker({
+      timepicker:false,
+      format:'d/m/Y'
+    });
+  });
+</script>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421173831) do
+ActiveRecord::Schema.define(version: 20160423140858) do
 
   create_table "educations", force: :cascade do |t|
     t.text     "institution"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20160421173831) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "occupations", force: :cascade do |t|
+    t.string   "organisation"
+    t.string   "category"
+    t.string   "position"
+    t.integer  "profile_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.text     "name"
     t.integer  "mobile",             limit: 8
@@ -59,9 +68,10 @@ ActiveRecord::Schema.define(version: 20160421173831) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "verified",                     default: false
     t.integer  "user_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "user_roles", force: :cascade do |t|

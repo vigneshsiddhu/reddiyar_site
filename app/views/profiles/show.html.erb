@@ -4,185 +4,131 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
   <div class="row">
     <ol class="breadcrumb">
-              <div class="vd_info tr"><span class="fa fa-spinner fa-spin"></span><%= link_to 'Edit Profile', edit_profile_path, :class => "btn btn-default btn-md" %></div> 
       <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-      <li class="active">Icons</li>
+      <li class="active">Profile</li>
     </ol>
   </div><!--/.row-->
   
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Dashboard</h1>
+      <h1 class="page-header">My Profile</h1>
     </div>
   </div><!--/.row-->
   
   <div class="row">
-    <div class="col-lg-12">
-      <div id="menu1" class="admin_leftNav">
-          <div class="panel list-group">
-            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA1" data-parent="#menu1">Basic Info <span class="label label-info">5</span> </a>
-            <div class="panel-body">
-              <div id="RA1" class="sublinks collapse in">
+    <div class="col-md-8">
+      <div class="card">
+        <div id="menu1" class="admin_leftNav">
+          <div class="panel-body">
+            <div class="panel list-group">
+              <div class="content">
                 <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                    <%= nested_form_for @profile,:html => {:class => "form-horizontal"} do |f| %>
-                      <% if @profile.errors.any? %>
-                       <div id="error_explanation">
-                         <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Name</label>
+                          
+                          <input type="text" class="form-control" disabled value="<%= @profile.name %>">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="text" class="form-control" disabled value="<%=  @profile.user.email%>">
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                      <div class="form-group">
+                          <label>Date Of Birth</label>
+                          <input type="text" class="form-control" disabled value="<%= @profile.dob %>">
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                          <label>Age</label>
+                          <input type="text" class="form-control" placeholder="Username" value="michael23">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                  </div>
+                </div>
 
-                         <ul>
-                         <% @profile.errors.full_messages.each do |message| %>
-                           <li><%= message %></li>
-                         <% end %>
-                         </ul>
-                       </div>
-                      <% end %>
-                      <label>Name</label>
-                      <%= f.text_field :name, :class => "form-control",:placeholder => "First Name" %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                       <label>Date of Birth</label>
-                       <input class="form-control" type="text" placeholder="click to show datepicker" id="example1">
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                       <label>Gender</label>
-                         <%= f.select :gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control"} %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                       <label>Married Status:</label>
-                         <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control",:id => "marital_status"} %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                       <label>Mobile</label>
-                         <%= f.number_field :mobile, :class => "form-control" %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                       <label>Blood Group:</label>
-                         <%= f.select :blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control", :include_blank => 'Choose your bloog group'} %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA2" data-parent="#menu1">Educational Info</a>
-            <div class="panel-body">
-            <%= f.fields_for :educations do |ed| %>
-              <div id="RA2" class="sublinks collapse">
                 <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Institution Name:</label>
-                       <%= ed.text_field :institution,:class => "form-control",:placeholder => "Institution" %>
-                    </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>Address</label>
+                          <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                      </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Year of Completion:</label>
-                       <%= ed.text_field :year_of_completion,:class => "form-control",:placeholder => "Year of Completion" %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Education Type:</label>
-                       <%= ed.text_field :type_of_education,:class => "form-control",:placeholder => "Type of Education" %>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>City:</label>
-                       <%= ed.text_field :city,:class => "form-control",:placeholder => "City" %>
-                    </div>
-                  </div>
-                  <%= ed.link_to_remove "Remove this detail"%>
-                  <% end %>
-                  <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary"  %>
                 </div>
-              </div>
-            </div>
-            <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
-            <div class="panel-body">
-            <%= f.fields_for :location do |loc| %>
-              <div id="RA3" class="sublinks collapse">
+
                 <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Pincode:</label>
-                       <%= loc.text_field :pin_code,:class => "form-control",:placeholder => "Pincode" %>
-                    </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>City</label>
+                          <input type="text" class="form-control" placeholder="City" value="Mike">
+                      </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>City:</label>
-                       <%= loc.text_field :city,:class => "form-control",:placeholder => "City" %>
-                    </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>Country</label>
+                          <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                      </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>District:</label>
-                       <%= loc.text_field :district,:class => "form-control",:placeholder => "District" %>
-                    </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>Postal Code</label>
+                          <input type="number" class="form-control" placeholder="ZIP Code">
+                      </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Address:</label>
-                       <%= loc.text_field :address,:class => "form-control",:placeholder => "Address" %>
-                    </div>
-                  </div>
-                  <%= loc.link_to_remove "Remove this detail"%>
-                   <% end %>
-                   <%= f.link_to_add "Add Location details",:location, :class => "btn btn-primary"  %>
                 </div>
-              </div>
-            </div>
-           <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Educational Info</a>
-            <div class="panel-body">
-            <%= f.fields_for :family_members do |fm| %>
-              <div id="RA4" class="sublinks collapse">
+
                 <div class="row">
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Name:</label>
-                       <%= fm.select :member_id,options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }),{:class => "form-control"} %>
-                    </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>About Me</label>
+                          <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                      </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="form-group">
-                      <label>Relationship:</label>
-                       <%= fm.text_field :relationship,:class => "form-control" %>
-                    </div>
-                  </div>
-                  <%= fm.link_to_remove "Remove this member"%>
-                  <% end %>
-                  <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
                 </div>
-              </div>
-            </div>            
+                <%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-info btn-fill_show pull-right" %>
+                <!-- <button type="submit" class="btn btn-info btn-fill_show pull-right">Edit Profile</button> -->
+                <div class="clearfix"></div>
+              </div>  
+            </div>
           </div>
         </div>
-        <% end %>
+      </div>
     </div>
-  </div><!--/.row-->
-  
-  
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+          <%= image_tag("back.jpeg") %>
+        </div>
+        <div class="content">
+          <div class="author">
+            <%= image_tag(@profile.image, :alt => "Profile Picture", :class => "avatar") %>
+            <h3 class="title"><%= @profile.name %><br />
+              <p><%= @profile.user.email %></p>
+            </h3>
+        </div>
+        <!-- <p class="description text-center"> "Lamborghini Mercy <br>
+          Your chick she so thirsty <br>
+          I'm in that two seat Lambo"
+        </p> -->
+      </div>
+      <hr>
+      <div class="text-center">
+        <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+      </div>
+    </div>
+  </div>
+</div><!--/.row-->
 </div>  <!--/.main-->
-<script type="text/javascript">
-      // When the document is ready
-      $(document).ready(function () {
-          
-          $('#example1').datepicker({
-              format: "dd/mm/yyyy"
-          });  
-      
-      });
-  </script>

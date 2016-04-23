@@ -20,7 +20,9 @@
  *= require style
  *= require font-awesome
  *= require select2
+ *= require select2-bootstrap
  *= sb-admin-2
  *= datepicker
  *= metisMenu.min
+ *= jquery.datetimepicker
  */
