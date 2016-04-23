@@ -56,7 +56,11 @@
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
+<<<<<<< Updated upstream
+                         <label>Married Status:</label>
+=======
                          <label>Marital Status:</label>
+>>>>>>> Stashed changes
                            <%= f.select :marital_status,[["Married", "Married"],["Never Married", "Never Married"],["Windowed","Windowed"],["Divorced","Divorced"],["Awaiting Divorced","Awaiting Divorced"]],{},{:class => "form-control select1",:id => "marital_status"} %>
                       </div>
                     </div>
@@ -123,12 +127,15 @@
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
+<<<<<<< Updated upstream
+=======
                         <label>Address Type:</label>
                           <%= loc.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1"}%>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
+>>>>>>> Stashed changes
                         <label>Pincode:</label>
                          <%= loc.text_field :pin_code,:class => "form-control",:placeholder => "Pincode" %>
                       </div>
@@ -151,6 +158,15 @@
                          <%= loc.text_field :address,:class => "form-control",:placeholder => "Address" %>
                       </div>
                     </div>
+<<<<<<< Updated upstream
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Address Type:</label>
+                         <%= loc.text_field :address_type,:class => "form-control",:placeholder => "Address Type" %>
+                      </div>
+                    </div>
+=======
+>>>>>>> Stashed changes
                     <%= loc.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
@@ -164,16 +180,26 @@
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
+<<<<<<< Updated upstream
+                        <label>Organisation Name:</label>
+                         <%= occ.text_field :organisation, :class => "form-control", :placeholder => "Organisation" %>
+=======
                         <label>Category:</label>
                         <%#= occ.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1",:id => "marital_status"}%>
                         <%= occ.select :category,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control", :placeholder => "Occupation Category"} %>
                          
+>>>>>>> Stashed changes
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
+<<<<<<< Updated upstream
+                        <label>Category:</label>
+                         <%= occ.text_field :category, :class => "form-control dob", :placeholder => "Occupation Category" %>
+=======
                         <label>Organisation Name:</label>
                          <%= occ.text_field :organisation, :class => "form-control", :placeholder => "Organisation" %>
+>>>>>>> Stashed changes
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
