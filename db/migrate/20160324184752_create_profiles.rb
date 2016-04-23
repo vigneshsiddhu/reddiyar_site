@@ -11,6 +11,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :height
       t.integer :weight
       t.attachment :image
+      t.boolean :verified, default: false
       t.belongs_to :user
 
       t.timestamps null: false  

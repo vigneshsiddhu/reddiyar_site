@@ -25,3 +25,4 @@
 //= require sb-admin-2
 //= require bootstrap-datepicker
 //= require login
+//= require select2
