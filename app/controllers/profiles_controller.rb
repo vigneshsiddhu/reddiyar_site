@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy, :search]
   before_action :authenticate_user!
   before_filter :set_paper_trail_whodunnit
+  layout 'profile'
   # GET /profiles
   # GET /profiles.json
   def index
@@ -11,6 +12,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @profile = current_user.profile
+    @profiles = Profile.where.not(user_id: current_user.id)
   end
 
   def user_list
@@ -20,13 +23,18 @@ class ProfilesController < ApplicationController
     @profiles = Profile.where("name LIKE ?", "%#{params["name"]}%")
   end
 
+  def unverified_profiles
+    if current_user.user_roles.pluck(:role).include?(0)
+      @profiles = Profile.where(verified: false)
+    else
+      return false
+    end
+  end
 
   def verify_profile
     profile = Profile.find(params[:profile_id])
-    @status = Profile.verify_profile
-    respond_to do |format|
-      format.js
-    end
+    @status = Profile.verify_profile(profile)
+    redirect_to admin_unverified_profiles_path
   end
 
   # GET /profiles/new
@@ -87,6 +95,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_members_attributes:[:member_id, :relationship, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], location_attributes:[:pin_code_1, :city_1, :district_1, :address_1, :id, :_destroy])
+      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_members_attributes:[:member_id, :relationship, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], locations_attributes:[:pin_code, :city, :district, :address, :address_type, :id, :_destroy], occupations_attributes:[:organisation, :category, :position, :id, :_destroy])
     end
 end

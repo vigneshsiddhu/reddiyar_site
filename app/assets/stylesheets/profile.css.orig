@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+<<<<<<< HEAD:app/assets/stylesheets/application.css.orig
  *= require_self
  *= require bootstrap.min
  *= require animate.min
@@ -19,10 +20,22 @@
  *= require login
  *= require style
  *= require font-awesome
+<<<<<<< HEAD
  *= require select2
- *= require select2-bootstrap
+=======
  *= sb-admin-2
  *= datepicker
  *= metisMenu.min
+>>>>>>> 020bb2ae8d0ac61e4848dfd7cf9ab0ec477df1b7
+=======
+ *= require profiles
+ *= require bootstrap.min
+ *= require font-awesome.min
+ *= require font-awesome
+ *= require select2
+ *= require select2-bootstrap
  *= jquery.datetimepicker
+ *= sb-admin-2
+ *= metisMenu.min
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556:app/assets/stylesheets/profile.css
  */

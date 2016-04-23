@@ -13,14 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require creative
-//= require jquery.easing.min
-//= require jquery.fittext
-//= require wow.min
-
-//= require_tree .
+//= require_tree ./profile
 //= require jquery_nested_form
-//= require bootstrap.min
-//= require bootstrap-datepicker
-//= require login
 //= require select2

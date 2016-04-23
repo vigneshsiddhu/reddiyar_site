@@ -1,35 +1,19 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-	<form role="search">
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search">
-		</div>
-	</form>
+	<div class="form-group">
+    <%= form_tag '/search', :method => "post" do %>
+      <%= text_field_tag :name,nil, :class => "form-control",:placeholder => "Find People" %>
+      <%#= submit_tag 'search' %>
+    <%end %>
+	</div>
 	<ul class="nav" id="side-menu">
 		<li>
-            <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Basic Information<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li>
-                    <a href="flot.html">Education Details</a>
-                </li>
-                <li>
-                    <a href="morris.html">Personal Details</a>
-                </li>
-            </ul>
-            <!-- /.nav-second-level -->
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile Settings<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li>
-                    <a href="flot.html">Personal Info</a>
-                </li>
-            </ul>
-            <!-- /.nav-second-level -->
-        </li>
-        <li>
-            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</a>
-        </li>
-
-	</ul>
-
+      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> My Profile<span class="fa arrow"></span></a>
+    </li>
+    <li>
+      <a href="#"><i class="fa fa-users" aria-hidden="true"></i> My Family<span class="fa arrow"></span></a>
+    </li>
+    <li>
+      <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</a>
+    </li>
+  </ul>
 </div><!--/.sidebar-->

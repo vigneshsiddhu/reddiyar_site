@@ -1,0 +1,260 @@
+<%= render 'home/headertop' %>
+<%= render 'home/sidemenu' %>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+<<<<<<< HEAD
+      <li class="active">Show</li>
+=======
+      <li class="active">Profile</li>
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556
+    </ol>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-lg-12">
+<<<<<<< HEAD
+      <h1 class="page-header">Profile Show</h1>
+=======
+      <h1 class="page-header">My Profile</h1>
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556
+    </div>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div id="menu1" class="admin_leftNav">
+          <div class="panel-body">
+            <div class="panel list-group">
+              <div class="content">
+                <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Name</label>
+                          
+                          <input type="text" class="form-control" disabled value="<%= @profile.name %>">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="text" class="form-control" disabled value="<%=  @profile.user.email%>">
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                      <div class="form-group">
+                          <label>Date Of Birth</label>
+                          <input type="text" class="form-control" disabled value="<%= @profile.dob %>">
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                          <label>Age</label>
+                          <input type="text" class="form-control" placeholder="Username" value="michael23">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>Address</label>
+                          <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>City</label>
+                          <input type="text" class="form-control" placeholder="City" value="Mike">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>Country</label>
+                          <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group">
+                          <label>Postal Code</label>
+                          <input type="number" class="form-control" placeholder="ZIP Code">
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>About Me</label>
+                          <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                      </div>
+                  </div>
+                </div>
+<<<<<<< HEAD
+
+                <button type="submit" class="btn btn-info btn-fill_show pull-right">Edit Profile</button>
+=======
+                <%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-info btn-fill_show pull-right" %>
+                <!-- <button type="submit" class="btn btn-info btn-fill_show pull-right">Edit Profile</button> -->
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556
+                <div class="clearfix"></div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+<<<<<<< HEAD
+    </div>
+    <div class="col-md-4">
+      <div class="card card-user">
+          <div class="image">
+              <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+          </div>
+          <div class="content">
+              <div class="author">
+                   <a href="#">
+                   <%= image_tag("viki.jpg", :alt => "rss feed", :class => "avatar") %>
+
+                    <h4 class="title">Mike Andrew<br />
+                       <small>michael24</small>
+                    </h4>
+                  </a>
+              </div>
+              <p class="description text-center"> "Lamborghini Mercy <br>
+                                  Your chick she so thirsty <br>
+                                  I'm in that two seat Lambo"
+              </p>
+          </div>
+          <hr>
+          <div class="text-center">
+              <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+              <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+              <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+          </div>
+      </div>
+=======
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556
+    </div>
+    <div class="col-md-4">
+      <div class="card card-user">
+        <div class="image">
+          <%= image_tag("back.jpeg") %>
+        </div>
+        <div class="content">
+          <div class="author">
+            <%= image_tag(@profile.image, :alt => "Profile Picture", :class => "avatar") %>
+            <h3 class="title"><%= @profile.name %><br />
+              <p><%= @profile.user.email %></p>
+            </h3>
+        </div>
+        <!-- <p class="description text-center"> "Lamborghini Mercy <br>
+          Your chick she so thirsty <br>
+          I'm in that two seat Lambo"
+        </p> -->
+      </div>
+      <hr>
+      <div class="text-center">
+        <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+        <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+      </div>
+    </div>
+  </div>
+</div><!--/.row-->
+</div>  <!--/.main-->
+<<<<<<< HEAD
+<script type="text/javascript">
+      // When the document is ready
+      $(document).ready(function () {
+          
+          $('#example1').datepicker({
+              format: "dd/mm/yyyy"
+          });  
+      
+      });
+  </script>
+
+<style type="text/css">
+  
+  .card {
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+  }
+  .card .content {
+    padding: 17px 34px 10px 15px;
+  }
+  .card .content .row {
+      margin-right: -7px;
+      margin-left: -15px;
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #FFF;
+    color: #888888;
+    cursor: not-allowed;
+  }
+  .card-user .author {
+    text-align: center;
+    text-transform: none;
+    margin-top: -70px;
+  }
+  .card .author {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .card-user .avatar {
+    width: 124px;
+    height: 124px;
+    border: 5px solid #FFFFFF;
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border-color: #EEEEEE;
+  }
+  .card .description {
+  font-size: 14px;
+  color: #333;
+  }
+  .btn {
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: transparent;
+    font-weight: 400;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    padding: 8px 16px;
+    border-color: #888888;
+    color: #888888;
+  }
+  .btn-info {
+    border-color: #1DC7EA;
+    color: #1DC7EA;
+  }
+  .btn-info.btn-fill_show {
+    color: #FFFFFF;
+    background-color: #1DC7EA;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  
+</style>
+=======
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556

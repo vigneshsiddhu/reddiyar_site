@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   post '/search' => 'profiles#search'
   get 'home/index2' => 'home#index2'
   post 'home/index2' => 'home#index2'
+<<<<<<< HEAD
+  get 'user_list' => 'profiles#user_list'
+=======
 
   get '/admin/unverified_profiles' => 'profiles#unverified_profiles'
   get '/admin/verify_profile/:profile_id' => 'profiles#verify_profile', as: :verify_profile
+>>>>>>> 93bce0456d9499a10691c9e24a405e9256b31556
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
