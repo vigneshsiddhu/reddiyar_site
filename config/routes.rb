@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/admin/unverified_profiles' => 'profiles#unverified_profiles'
   get '/admin/verify_profile/:profile_id' => 'profiles#verify_profile', as: :verify_profile
+  get '/myfamily' => 'profiles#family_list'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -7,7 +7,9 @@
 	</div>
 	<ul class="nav" id="side-menu">
 		<li>
-      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> My Profile<span class="fa arrow"></span></a>
+      <%= link_to profile_path(current_user.profile) do %>
+      <i class="fa fa-user" aria-hidden="true"></i> My Profile<span class="fa arrow"></span>
+      <% end %>
     </li>
     <li>
       <a href="#"><i class="fa fa-users" aria-hidden="true"></i> My Family<span class="fa arrow"></span></a>
