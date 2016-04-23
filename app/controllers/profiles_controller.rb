@@ -17,6 +17,15 @@ class ProfilesController < ApplicationController
     @profiles = Profile.where("name LIKE ?", "%#{params["name"]}%")
   end
 
+
+  def verify_profile
+    profile = Profile.find(params[:profile_id])
+    @status = Profile.verify_profile
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # GET /profiles/new
   def new
     @profile = Profile.new

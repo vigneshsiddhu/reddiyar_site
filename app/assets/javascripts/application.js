@@ -22,3 +22,4 @@
 //= require jquery_nested_form
 //= require bootstrap.min
 //= require login
+//= require select2

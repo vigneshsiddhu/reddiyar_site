@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, foreign_key: 'user_id'
   has_many :family_members, through: :profile
+  has_many :user_roles
 
   after_create :create_profile
 

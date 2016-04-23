@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_roles
   post '/search' => 'profiles#search'
   devise_for :users
   resources :family_members

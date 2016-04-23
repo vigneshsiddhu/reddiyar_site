@@ -214,7 +214,7 @@
                                     <div class="form-group">
                                       <label class="col-lg-3 control-label">Name:</label>
                                       <div class="col-lg-8">
-                                        <%= fm.select :member_id,options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }),{:class => "form-control"} %>
+                                        <%= fm.select :member_id, options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }), class: "form-control member" %>
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -223,6 +223,9 @@
                                         <%= fm.text_field :relationship,:class => "form-control" %>
                                       </div>
                                     </div>
+                                    <script type="text/javascript">
+                                      $('select').select2({width:'100%'});
+                                    </script>
                                     <%= fm.link_to_remove "Remove this member"%>
                                   <% end %>
                                   <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
@@ -244,7 +247,6 @@
           </div>
 
 <% end %>
-
 <style>
 .btn {
   display: inline-block;
