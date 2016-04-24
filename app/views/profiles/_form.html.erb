@@ -110,10 +110,10 @@
                           <%= ed.text_field :city,:class => "form-control",:placeholder => "City" %>
                       </div>
                     </div>
-                    <%= ed.link_to_remove "Remove this detail"%>
+                    <i class="fa fa-times"></i> <%= ed.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary"  %>
+                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary", :style => "float:right;"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
@@ -151,10 +151,10 @@
                          <%= loc.text_field :address,:class => "form-control",:placeholder => "Address" %>
                       </div>
                     </div>
-                    <%= loc.link_to_remove "Remove this detail"%>
+                    <i class="fa fa-times"></i> <%= loc.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-primary"  %>
+                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-primary", :style => "float:right;" %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Occupation Info</a>
@@ -182,10 +182,10 @@
                          <%= occ.text_field :position, :class => "form-control", :placeholder => "Your position" %>
                       </div>
                     </div>
-                    <%= occ.link_to_remove "Remove this detail"%>
+                    <i class="fa fa-times"></i> <%= occ.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-primary"  %>
+                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-primary", :style => "float:right;"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA5" data-parent="#menu1">Family Members</a>
@@ -208,7 +208,7 @@
                     <script type="text/javascript">
                       $('.select2_search').select2({theme: "bootstrap"});
                     </script>
-                    <%= fm.link_to_remove "Remove this member"%>
+                    <i class="fa fa-times"></i> <%= fm.link_to_remove "Remove this member"%>
                   </div>
                 <% end %>
                 <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
