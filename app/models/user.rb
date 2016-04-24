@@ -11,5 +11,8 @@ class User < ActiveRecord::Base
 
   def create_profile
     profile = Profile.create(user_id: self.id)
+    loc = Location.create(profile_id: profile.id)
+    edu = Education.create(profile_id: profile.id)
+    occ = Occupation.create(profile_id: profile.id)
   end
 end

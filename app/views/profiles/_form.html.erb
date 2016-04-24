@@ -113,7 +113,7 @@
                     <%= ed.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-info btn-fill_show"  %>
+                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-info btn-fill_show pull-right"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
@@ -154,7 +154,7 @@
                     <%= loc.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-info btn-fill_show"  %>
+                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-info btn-fill_show pull-right"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Occupation Info</a>
@@ -166,7 +166,7 @@
                       <div class="form-group">
                         <label>Category:</label>
                         <%#= occ.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1",:id => "marital_status"}%>
-                        <%= occ.select :category,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control", :placeholder => "Occupation Category"} %>
+                        <%= occ.select :category,[["GOVERMENT SALARIED","GOVERMENT SALARIED"],["SELF EMPLOYED BUSINESS","SELF EMPLOYED BUSINESS"],["SELF EMPLOYED PROFESSIONAL","SELF EMPLOYED PROFESSIONAL"],["SALARIED PROFESSIONAL","SALARIED PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control", :placeholder => "Occupation Category"} %>
                          
                       </div>
                     </div>
@@ -185,7 +185,7 @@
                     <%= occ.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-info btn-fill_show"  %>
+                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-info btn-fill_show pull-right"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA5" data-parent="#menu1">Family Members</a>
@@ -211,7 +211,7 @@
                     <%= fm.link_to_remove "Remove this member"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-info btn-fill_show"  %>
+                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-info btn-fill_show pull-right"  %>
                 </div>
               </div>            
             </div>

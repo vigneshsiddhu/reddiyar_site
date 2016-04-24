@@ -14,7 +14,6 @@ Version 1.0
 
 body {
 	background: #f1f4f7;
-	padding-top: 50px;
 	color: #5f6468;
 }
 
@@ -561,7 +560,6 @@ a.bg-danger:hover {
 		box-shadow: 1px 0px 10px rgba(0, 0, 0, .05);
 	}
 	.navbar-header {
-		width: 100%;
 	}
 }
 

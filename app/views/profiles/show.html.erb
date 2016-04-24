@@ -48,7 +48,9 @@
                   <div class="col-md-3">
                       <div class="form-group">
                           <label>Age</label>
-                          <input type="text" class="form-control"  disabled placeholder="Username" value="<%= Date.today.year - @profile.dob.year %>">
+                          <% if @profile.dob.present? %>
+                          <input type="text" class="form-control"  disabled value="<%= Date.today.year - @profile.dob.year %>">
+                          <% end %>
                       </div>
                   </div>
                   <div class="col-md-4">
@@ -63,7 +65,7 @@
                   <div class="col-md-12">
                       <div class="form-group">
                           <label>Address</label>
-                          <input type="text" class="form-control"  disabled placeholder="Home Address" value="<%= @profile.locations.first.address %>">
+                          <input type="text" class="form-control"  disabled  value="<%= @profile.locations.first.address %>">
                       </div>
                   </div>
                 </div>
@@ -72,31 +74,31 @@
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>City</label>
-                          <input type="text" class="form-control"  disabled placeholder="City" value="<%= @profile.locations.first.city %>">
+                          <input type="text" class="form-control"  disabled value="<%= @profile.locations.first.city %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>District</label>
-                          <input type="text" class="form-control"  disabled placeholder="Country" value="<%= @profile.locations.first.district %>">
+                          <input type="text" class="form-control"  disabled value="<%= @profile.locations.first.district %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Postal Code</label>
-                          <input type="number" class="form-control"  disabled placeholder= "" value="<%= @profile.locations.first.pin_code %>">
+                          <input type="number" class="form-control"  disabled value="<%= @profile.locations.first.pin_code %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Marital Status</label>
-                          <input type="text" class="form-control"  disabled placeholder= "" value="<%= @profile.marital_status %>">
+                          <input type="text" class="form-control"  disabled value="<%= @profile.marital_status %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Blood Group</label>
-                          <input type="text" class="form-control"  disabled placeholder= "" value="<%= @profile.blood_group %>">
+                          <input type="text" class="form-control"  disabled value="<%= @profile.blood_group %>">
                       </div>
                   </div>
                   <div class="col-md-4">
@@ -110,7 +112,7 @@
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Education</label>
-                          <input type="text" class="form-control"  disabled placeholder="City" value="<%= @profile.educations.first.type_of_education %>">
+                          <input type="text" class="form-control"  disabled value="<%= @profile.educations.first.type_of_education %>">
                       </div>
                   </div>
                 </div>
