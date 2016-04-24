@@ -21,7 +21,7 @@ class ProfilesController < ApplicationController
   end
 
   def unverified_profiles
-    if current_user.user_roles.pluck(:role).include?(0)
+    if (current_user.user_roles.pluck(:role) & [0,1,3]).any?
       @profiles = Profile.where(verified: false)
     else
       return false
