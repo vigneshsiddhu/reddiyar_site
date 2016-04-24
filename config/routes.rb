@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
 
   resources :user_roles
-  post '/search' => 'profiles#search'
   devise_for :users
   resources :family_members
-  resources :profiles
+  resources :profiles, only: [:show, :edit, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  post '/search' => 'profiles#search'
   get 'home/index2' => 'home#index2'
-
   post 'home/index2' => 'home#index2'
+
+  get '/admin/unverified_profiles' => 'profiles#unverified_profiles'
+  get '/admin/verify_profile/:profile_id' => 'profiles#verify_profile', as: :verify_profile
+  get '/myfamily' => 'profiles#family_list'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

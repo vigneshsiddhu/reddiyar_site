@@ -4,7 +4,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
   <div class="row">
     <ol class="breadcrumb">
-      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
       <li class="active">Profile</li>
     </ol>
   </div><!--/.row-->
@@ -44,19 +44,29 @@
                           <input type="text" class="form-control" disabled value="<%= @profile.dob %>">
                       </div>
                   </div>
+<<<<<<< Updated upstream
+                  <div class="col-md-3">
+                      <div class="form-group">
+                          <label>Age</label>
+                          <input type="text" class="form-control" placeholder="Username" value="michael23">
+=======
                   
                   <div class="col-md-3">
                       <div class="form-group">
                           <label>Age</label>
-                          <% if @profile.dob.present? %>
-                          <input type="text" class="form-control"  disabled value="<%= Date.today.year - @profile.dob.year %>">
-                          <% end %>
+                          <input type="text" class="form-control"  disabled placeholder="Username" value="<%= Date.today.year - @profile.dob.year %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
+<<<<<<< Updated upstream
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" placeholder="Email">
+=======
                           <label for="exampleInputEmail1">Mobile</label>
                           <input type="email" class="form-control"  disabled value = "<%= @profile.mobile %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                 </div>
@@ -65,7 +75,11 @@
                   <div class="col-md-12">
                       <div class="form-group">
                           <label>Address</label>
-                          <input type="text" class="form-control"  disabled  value="<%= @profile.locations.first.address %>">
+<<<<<<< Updated upstream
+                          <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+=======
+                          <input type="text" class="form-control"  disabled placeholder="Home Address" value="<%= @profile.locations.first.address %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                 </div>
@@ -74,31 +88,52 @@
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>City</label>
-                          <input type="text" class="form-control"  disabled value="<%= @profile.locations.first.city %>">
+<<<<<<< Updated upstream
+                          <input type="text" class="form-control" placeholder="City" value="Mike">
+=======
+                          <input type="text" class="form-control"  disabled placeholder="City" value="<%= @profile.locations.first.city %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
+<<<<<<< Updated upstream
+                          <label>Country</label>
+                          <input type="text" class="form-control" placeholder="Country" value="Andrew">
+=======
                           <label>District</label>
-                          <input type="text" class="form-control"  disabled value="<%= @profile.locations.first.district %>">
+                          <input type="text" class="form-control"  disabled placeholder="Country" value="<%= @profile.locations.first.district %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Postal Code</label>
-                          <input type="number" class="form-control"  disabled value="<%= @profile.locations.first.pin_code %>">
+<<<<<<< Updated upstream
+                          <input type="number" class="form-control" placeholder="ZIP Code">
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>About Me</label>
+                          <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+=======
+                          <input type="number" class="form-control"  disabled placeholder= "" value="<%= @profile.locations.first.pin_code %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Marital Status</label>
-                          <input type="text" class="form-control"  disabled value="<%= @profile.marital_status %>">
+                          <input type="text" class="form-control"  disabled placeholder= "" value="<%= @profile.marital_status %>">
                       </div>
                   </div>
                   <div class="col-md-4">
                       <div class="form-group">
                           <label>Blood Group</label>
-                          <input type="text" class="form-control"  disabled value="<%= @profile.blood_group %>">
+                          <input type="text" class="form-control"  disabled placeholder= "" value="<%= @profile.blood_group %>">
                       </div>
                   </div>
                   <div class="col-md-4">
@@ -111,15 +146,14 @@
                 <div class="row">
                   <div class="col-md-4">
                       <div class="form-group">
-                          <label>Education</label>
-                          <input type="text" class="form-control"  disabled value="<%= @profile.educations.first.type_of_education %>">
+                          <label></label>
+                          <input type="text" class="form-control"  disabled placeholder="City" value="<%= @profile.educations.first.type_of_education %>">
+>>>>>>> Stashed changes
                       </div>
                   </div>
                 </div>
-                <% if current_user.profile.id == @profile.id %>
-                  <%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-info btn-fill_show pull-right" %>
+                <%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-info btn-fill_show pull-right" %>
                 <!-- <button type="submit" class="btn btn-info btn-fill_show pull-right">Edit Profile</button> -->
-                <% end %>
                 <div class="clearfix"></div>
               </div>  
             </div>
@@ -130,7 +164,11 @@
     <div class="col-md-4">
       <div class="card card-user">
         <div class="image">
-          <%= image_tag("back.jpeg", width: '100%') %>
+<<<<<<< Updated upstream
+          <%= image_tag("back.jpeg") %>
+=======
+          <%#= image_tag("back.jpeg") %>
+>>>>>>> Stashed changes
         </div>
         <div class="content">
           <div class="author">

@@ -11,12 +11,13 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
-<<<<<<< Updated upstream
+ *= require profiles
  *= require bootstrap.min
-=======
- *= require animate.min
- *= require creative
  *= require font-awesome.min
->>>>>>> Stashed changes
+ *= require font-awesome
+ *= require select2
+ *= require select2-bootstrap
+ *= jquery.datetimepicker
+ *= sb-admin-2
+ *= metisMenu.min
  */
