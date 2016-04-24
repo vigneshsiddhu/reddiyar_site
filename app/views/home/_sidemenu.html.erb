@@ -12,10 +12,16 @@
       <% end %>
     </li>
     <li>
-      <a href="/myfamily"><i class="fa fa-users" aria-hidden="true"></i> My Family<span class="fa arrow"></span></a>
+      <%= link_to myfamily_path do %>
+        <i class="fa fa-users" aria-hidden="true"></i> My Family<span class="fa arrow"></span>
+      <% end %>
     </li>
+    <% if (current_user.user_roles.pluck(:role) & [0,1,3]).any? %>
     <li>
-      <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</a>
+      <%= link_to admin_unverified_profiles_path do %>
+        <i class="fa fa-envelope" aria-hidden="true"></i> Verify Profiles<span class="fa arrow"></span>
+      <% end %>
     </li>
+    <% end %>
   </ul>
 </div><!--/.sidebar-->

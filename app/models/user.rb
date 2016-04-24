@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   after_create :create_profile
 
   def create_profile
-	profile = Profile.create(user_id: self.id)
+    profile = Profile.create(user_id: self.id)
   end
 end

@@ -83,7 +83,7 @@
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA2" data-parent="#menu1">Educational Info</a>
               <div class="panel-body">
-                <div id="RA2" class="sublinks collapse">
+                <div id="RA2" class="sublinks collapse in">
                 <%= f.fields_for :educations do |ed| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -113,18 +113,18 @@
                     <i class="fa fa-times"></i> <%= ed.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-primary", :style => "float:right;"  %>
+                <%= f.link_to_add "Add education details",:educations, :class => "btn btn-info btn-fill_show", :style => "float:right;"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA3" data-parent="#menu1">Location</a>
               <div class="panel-body">
-                <div id="RA3" class="sublinks collapse">
+                <div id="RA3" class="sublinks collapse in">
                 <%= f.fields_for :locations do |loc| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Address Type:</label>
-                          <%= loc.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1"}%>
+                          <%= loc.select :address_type,[["Current", "current"], ["Native", "native"], ["Office/Bussiness", "office"]],{},{:class => "form-control select1"}%>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -154,19 +154,19 @@
                     <i class="fa fa-times"></i> <%= loc.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-primary", :style => "float:right;" %>
+                <%= f.link_to_add "Add Location details",:locations, :class => "btn btn-info btn-fill_show", :style => "float:right;" %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA4" data-parent="#menu1">Occupation Info</a>
               <div class="panel-body">
-                <div id="RA4" class="sublinks collapse">
+                <div id="RA4" class="sublinks collapse in">
                 <%= f.fields_for :occupations do |occ| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Category:</label>
                         <%#= occ.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1",:id => "marital_status"}%>
-                        <%= occ.select :category,[["SELECT", "SELECT"],["GOVERMENT_SALARIED","GOVERMENT_SALARIED"],["SELF_EMPLOYED_BUSINESS","SELF_EMPLOYED_BUSINESS"],["SELF_EMPLOYED_PROFESSIONAL","SELF_EMPLOYED_PROFESSIONAL"],["SALARIED_PROFESSIONAL","SALARIED_PROFESSIONAL"],["RETIRED","RETIRED"],["STUDENT","STUDENT"],["HOMEMAKER","HOMEMAKER"]],{},{:class => "form-control", :placeholder => "Occupation Category"} %>
+                        <%= occ.select :category,[["SELECT", "SELECT"],["GOVERMENT SALARIED","goverment_salaried"],["SELF EMPLOYED BUSINESS","self_employed_business"],["SELF EMPLOYED PROFESSIONAL","self_employed_professional"],["SALARIED PROFESSIONAL","salaried_professional"],["RETIRED","retired"],["STUDENT","student"],["HOMEMAKER","homemaker"]],{},{:class => "form-control", :placeholder => "Occupation Category"} %>
                          
                       </div>
                     </div>
@@ -185,12 +185,12 @@
                     <i class="fa fa-times"></i> <%= occ.link_to_remove "Remove this detail"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-primary", :style => "float:right;"  %>
+                <%= f.link_to_add "Add occupation details", :occupations, :class => "btn btn-info btn-fill_show", :style => "float:right;"  %>
                 </div>
               </div>
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA5" data-parent="#menu1">Family Members</a>
               <div class="panel-body">
-                <div id="RA5" class="sublinks collapse">
+                <div id="RA5" class="sublinks collapse in">
                 <%= f.fields_for :family_members do |fm| %>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -211,14 +211,14 @@
                     <i class="fa fa-times"></i> <%= fm.link_to_remove "Remove this member"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-primary"  %>
+                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-info btn-fill_show"  %>
                 </div>
               </div>            
             </div>
           </div>
       </div>
     </div><!--/.row-->
-    <%= submit_tag 'submit', :class => 'btn btn-primary' %>
+    <%= submit_tag 'submit', :class => 'btn btn-info btn-fill_show pull-right' %>
   <% end %>
 </div>  <!--/.main-->
 <script type="text/javascript">
