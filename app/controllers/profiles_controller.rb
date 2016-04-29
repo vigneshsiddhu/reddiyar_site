@@ -34,6 +34,7 @@ class ProfilesController < ApplicationController
     profile = Profile.where(id: family.pluck(:member_id))
     family.each_with_index do |fam, i|
       member = {
+        'profile_id' => profile[i].id,
         'name' => profile[i].name,
         'email' =>  profile[i].user.email,
         'relationship' => fam.relationship,
