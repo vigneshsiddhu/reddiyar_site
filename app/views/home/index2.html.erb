@@ -1,262 +1,397 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Trichy Reddiars Community</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css"> 
-
-  
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="js/custom.js"></script>
-
-</head>
 <body>
+<div class="header-connect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-8 col-xs-8">
+                <div class="header-call">
+                    <p>
+                        <span><i class="fa fa-cloud" aria-hidden="true"></i> +9999994563</span>&nbsp;
+                        <span><i class="fa fa-commenting-o" aria-hidden="true"></i> reddiarscommunity@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-3  col-xs-offset-1">
+                <div class="header-social">
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vine"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+      <!-- <a class= "navbar-brand text-center" href="index.html"> <%#= image_tag("logo1.jpg", :alt => "rss feed") %></a> -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="height:0px">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand text-center" href="index.html"  > <%= image_tag("logofinal1.png", :alt => "rss feed") %></a>
+    </div>
 
- <%= render 'menu' %>
-
-<!-- ///////////////////////////Slider Start /////////////////////////////// --> 
-
-<div class="container-fluid" style="margin-top:-20px !important;">
-<div class="row">
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="3"></li>
-    <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="4"></li>
-  </ol>
- 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-    <%= image_tag("slider-001.jpg", :alt => "rss feed") %>
-    </div>
-    <div class="item">
-     <%= image_tag("slider-002.jpg", :alt => "rss feed") %>
-    </div>
-    <div class="item">
-      <%= image_tag("slider-003.jpg", :alt => "rss feed") %>
-    </div>
-    <div class="item">
-     <%= image_tag("slider-004.jpg", :alt => "rss feed") %>
-    </div>
-    <div class="item">
-    <%= image_tag("slider-005.jpg", :alt => "rss feed") %>
-    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="button navbar-right">
+          <button class="navbar-btn nav-button login">Login</button>
+          <button class="navbar-btn nav-button">Sign up</button>
+      </div>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid" style="margin-top:0px !important;">
+  <div class="row">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li style="background-color:#2c93d5;" data-target="#carousel-example-generic" data-slide-to="4"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+        <%= image_tag("slide3.jpg", :alt => "rss feed") %>
+        </div>
+        <div class="item">
+         <%= image_tag("slide4.jpg", :alt => "rss feed") %>
+        </div>
+        <div class="item">
+          <%= image_tag("slide5.jpg", :alt => "rss feed") %>
+        </div>
+        <div class="item">
+         <%= image_tag("slide1.jpg", :alt => "rss feed") %>
+        </div>
+        <div class="item">
+        <%= image_tag("slide2.jpg", :alt => "rss feed") %>
+        </div>
+      </div>
+   
+    <!-- Controls -->
+     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div> <!-- Carousel -->
   </div>
- 
-  <!-- Controls -->
- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div> <!-- Carousel -->
+</div>
 
+<div class="col-lg-12" style="background: #7fbbda none repeat scroll 0 0;">
+<div class="container">
+  <div class="row">
+  <br>
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 search-content">
+          <h2 class = "centered searchh2">Search People Here</h2>
+          <hr>
+          <div class="search-form">
+              <form action="" class="form-inline">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group">
+                      <select name="" id="" class="form-control">
+                          <option selected>Select City</option>
+                          <option>Trichy</option>
+                          <option>Chennai</option>
+                      </select>
+                  </div>
 
+                  <button class="navbar-btn nav-button login">Search</button>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 
-<!-- ///////////////////////////Slider End /////////////////////////////// --> 
-
-<!-- /////////////////////  Main Body Start ////////////////////////////// -->
-<div class="container-fluid" style="background-color:#fecb00;">
-<div class="row"> 
-
-<div class="col-sm-2 text-center" style="padding:30px;">
-</div>
-
-<div class="col-sm-6"> 
-    <ul class="list-unstyled" style="margin-top:10px;" >
-    <li style=" padding-bottom:3px;"> <a href="#"> <span class="glyphicon glyphicon-link"></span> Members List</a>  </li> 
-    <li> <a href="#"> <span class="glyphicon glyphicon-link"></span> Photo Gallery</a> </li>
-    <li> <a href="#"> <span class="glyphicon glyphicon-link"></span> News and Events </a> </li>
-    <li> <a href="#"> <span class="glyphicon glyphicon-link"></span> Contact Us</a> </li> 
-    </ul>
-</div>
-
-
-
-  
-
-<div class="col-sm-3 text-center" style="padding:30px;">
-
-<form class="navbar-form pull-right" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control input-lg" placeholder="Search" name="q">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default input-lg" type="submit"><i class="glyphicon glyphicon-search "></i></button>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row footer">
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <a class="navbar-brand text-center" href="index.html"  > <%= image_tag("logofinal1.png",:alt => "rss feed", :style => "height:40px;width:315px;") %></a>
+                            <p>This portal helps pepole to connect with their society people's and help them to share the photos and videos, to know the lattest update of community group</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <h4>Twitter update</h4>
+                            <div class="twitter-updates">
+                                <div class="single-tweets">
+                                    <h5>ABOUT 9 HOURS</h5>
+                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                </div>
+                                <div class="single-tweets">
+                                    <h5>ABOUT 9 HOURS</h5>
+                                    <p><strong>AGOMeet Aldous</strong> - a Brave New World for #rails with more cohesion, less coupling and greater dev speed <a href="http://t.co/rsekglotzs">http://t.co/rsekglotzs</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-footer">
+                            <h4>Useful lnks</h4>
+                            <div class="footer-links">
+                                <ul class="list-unstyled">
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="" class="active">Services</a></li>
+                                    <li><a href="">Work</a></li>
+                                    <li><a href="">Our Blog</a></li>
+                                    <li><a href="">Customers Testimonials</a></li>
+                                    <li><a href="">Affliate</a></li>
+                                    <li><a href="">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </form> 
-            
-  
-</div>
-
-</div>
-</div>
-<!-- /////////////////////  Main Body End ////////////////////////////// -->
- 
-
-<!-- Pop up Sign Up Panel Starts Here  -->    
-  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="vertical-alignment-helper">
-      <div class="modal-dialog vertical-align-center">
-                  
-            <div class="container-fluid" style="margin-top:40px">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="panel panel-default">
-                  <div class="panel-heading" style="text-align: center;">
-                    <strong>Join with our Community</strong> 
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  </div>
-                                    
-                                    <p class="text-center" style="padding:20px; padding-bottom:0px !important;  line-height:25px;">Welcome to REDDIARS COMMUNITY </p> 
-                  <div class="panel-body">
-                    <form role="form" action="#" method="POST">
-                      <fieldset>
-                         <div class="row">
-                          <div class="col-sm-12">
-                            
-                                                        <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-user"></i>
-                                </span> 
-                                <input class="form-control" placeholder="Name" name="Name" type="text" autofocus>
-                              </div>
-                            </div>
-
-                                                        
-                                                         <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-phone"></i>
-                                </span> 
-                                <input class="form-control" placeholder="Phone" name="Phone" type="text" autofocus>
-                              </div>
-                            </div>
-                                                        
-                                                         <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-envelope"></i>
-                                </span> 
-                                <input class="form-control" placeholder="Email Id" name="Emailid" type="text" autofocus>
-                              </div>
-                            </div>                                                       
-                                                        
-                            <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-pencil"></i>
-                                </span>
-                                <input class="form-control" placeholder="Message" name="message" type="text" value="">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign Up">
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </fieldset>
-                    </form>
-                  </div>
-                  
-                         </div>
-              </div>
             </div>
-          </div>
-
-      </div>
-      </div>
-    </div>
-  <!-- Pop up Sign Up Panel Ends Here  -->
-    
-    
-    <!-- Pop up Login Panel Starts Here  -->    
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="vertical-alignment-helper">
-      <div class="modal-dialog vertical-align-center">
-                  
-            <div class="container-fluid" style="margin-top:40px">
-            <div class="row">
-              <div class="col-sm-8">
-                <div class="panel panel-default">
-                  <div class="panel-heading" style="text-align: center;">
-                    <strong>Login</strong> 
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  </div>
-                                    
-                                    <p class="text-center" style="padding:20px; padding-bottom:0px !important;  line-height:25px;">Welcome to REDDIARS COMMUNITY </p> 
-                  <div class="panel-body">
-                    <form role="form" action="#" method="POST">
-                      <fieldset>
-                         <div class="row">
-                          <div class="col-sm-12">
-                            
-                                                        <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-user"></i>
-                                </span> 
-                                <input class="form-control" placeholder="User Name" name="User-Name" type="text" autofocus>
-                              </div>
-                            </div>
-
-                                                                                                             
-                                                         <div class="form-group">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <i class="glyphicon glyphicon-lock"></i>
-                                </span> 
-                                <input class="form-control" placeholder="Password" name="password" type="password" autofocus>
-                              </div>
-                            </div>                                                       
-
-                            <div class="form-group">
-                              <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign Up">
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </fieldset>
-                    </form>
-                  </div>
-                  
-                         </div>
-              </div>
-            </div>
-          </div>
-
-      </div>
-      </div>
-    </div>
-  <!-- Pop up Login Panel Ends Here  -->
-    
-    
-<!-- /////////////////////  Footer Start ////////////////////////////// -->
-<div class="container-fluid" id="footer" >
-<div class="row"> 
-    <div class="col-sm-12 text-center"> 
-    <a href="#">About Us </a> <span class="footer-pipe"> | </span> <a href="#"> Members List </a> <span class="footer-pipe"> | </span> <a href="#"> Gallery </a> <span class="footer-pipe"> | </span> <a href="#"> News and Events </a> <span style="color:#CCC; margin:15px"> | </span> <a href="#"> Contact Us</a> </div>
-
-</div>
-</div>
-<!-- /////////////////////  Footer End ////////////////////////////// -->
-
+        </div>
 
 </body>
-</html>
-  
+
+
+<style type="text/css">
+/* header content */
+
+
+.header-connect{
+  padding-top: 10px;
+  background-color: #fff;
+}
+.header-call p{
+  border: 2px;
+  border-radius: 4px;
+  border-color: #e7e7e7;
+  color: #666666;
+}
+.header-call p span{
+  margin-right: 15px;
+  font-weight: 300;
+}
+.header-call p span i{
+  margin-right: 3px;
+  font-size: 18px
+}
+.header-social ul{
+  padding-top: 5px
+}
+.header-social ul li a{
+  color: #666666;
+  font-size: 14px
+
+}
+.header-social ul li a:hover{
+  color: #00AEEF
+}
+
+/* header content */
+
+.navbar-default .navbar-nav > li > a{
+color: #202020;
+font-size: 16px;
+font-weight: 400;
+text-transform: capitalize;
+position: relative;
+
+}
+.navbar-nav > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.navbar-default .navbar-nav > li > a.active:after{
+
+  /*background-color: #00aeef;
+  bottom: -24px;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  transition: all 0.2s ease 0s;
+  width: 100%;*/
+}
+.navbar-default .navbar-nav > li > a::after {
+/*background-color: #00aeef;
+  bottom: -24px;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  transition: all 0.2s ease 0s;
+  width: 0%;*/
+}
+.navbar-default .navbar-nav > li > a:hover:after {
+  width: 100%;
+}
+
+.navbar-nav.navbar-right:last-child{
+  margin-right: 20px
+}
+.navbar-brand {
+  padding-top: 10px;
+}
+.main-nav {
+  padding-top: 10px;
+}
+.button.navbar-right {
+  padding-top: 10px;
+}
+.nav-button {
+  background-color: #c2c2c2;
+  border: medium none;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 2px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.nav-button.login{
+  background-color: #00AEEF;
+  margin-right: 5px;
+}
+.nav-button:hover{
+  background-color: #00AEEF;
+
+}
+.navbar{
+  margin-bottom: 0px;
+  min-height: 100px;
+}
+.navbar-default {
+  background-image: none;
+  background-color: #fff;
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  box-shadow: none;
+  border-color: #e7e7e7;
+  border-style: solid; 
+  border-width: 1px;
+}
+.navbar .container{
+  padding-top: 15px
+}
+
+.slider-area{
+  position: relative;
+  height: 630px
+}
+#bg-slider .item img{
+  width: 100%;
+  height: 630px
+}
+.slider-area{
+  position: relative;
+  height: 630px
+}
+#bg-slider .item img{
+  width: 100%;
+  height: 630px
+}
+
+.slider-content{
+  position: absolute;
+  /*top: 45%;
+  left: 50%;
+  margin-left: -585px;*/
+  text-align: center;
+  color: #fff
+}
+.slider-content h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.slider-content p {
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+
+.slider .owl-theme .owl-controls {
+  margin-top: 0px;
+  position: relative;
+  text-align: center;
+}
+.slider .owl-pagination {
+  bottom: 280px;
+  position: absolute;
+  right: 10px;
+  width: 40px;
+}
+.slider .owl-theme .owl-controls .owl-page span{
+  background: #fff
+}
+.search-content {
+  height: 0 px;
+  margin-bottom: 50px;
+  background: #7fbbda none repeat scroll 0 0;
+}
+.search-form {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 11px 20px;
+  height: 84px;
+}
+.form-inline .form-control, .form-inline .form-control {
+  background: none repeat scroll 0 0 #eeeeee;
+  border-radius: 1px;
+  color: #333;
+  font-style: italic;
+  height: 40px;
+  margin-right: 10px;
+  width: 275px;
+}
+.footer-area {
+  background: #000;
+  border-top: 4px solid #00AEEF;
+  padding-bottom: 20px;
+}
+.footer {
+  padding: 60px 0 80px 0;
+}
+.footer-copy {
+  color: #fff;
+  font-weight: 700;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    left: 20%;
+    max-width: 100%;
+}
+.searchh2 {
+   color: #686868;
+   font-weight: normal;
+   text-shadow: none;
+}
+.centered {
+    text-align: center;
+}
+</style>
