@@ -4,15 +4,15 @@ class Profile < ActiveRecord::Base
 	has_many :educations
 	has_many :locations
 	has_many :occupations
-	has_paper_trail
+	has_paper_trail :only => [:verified]
 	accepts_nested_attributes_for :family_members, allow_destroy: true
 	accepts_nested_attributes_for :educations, allow_destroy: true
 	accepts_nested_attributes_for :locations, allow_destroy: true
 	accepts_nested_attributes_for :occupations, allow_destroy: true
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>",small: "200x200>" }, default_url: "default_avatar.png"
-  	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  	def self.verify_profile(profile)
+	def self.verify_profile(profile)
 		profile.update(verified: true)
-  	end
+	end
 end
