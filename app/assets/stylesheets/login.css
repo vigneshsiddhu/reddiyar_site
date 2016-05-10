@@ -1,4 +1,3 @@
-<style type="text/css">
     /*
  * Specific styles of signin component
  */
@@ -140,4 +139,3 @@ body, html {
 .forgot-password:focus{
     color: rgb(12, 97, 33);
 }
-</style>
