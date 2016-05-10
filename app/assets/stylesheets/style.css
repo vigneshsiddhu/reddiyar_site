@@ -972,31 +972,6 @@ display: block;
 
 
 
-/* ----------------  Footer Start ------------------------------------- */
-
-#footer {
-	background-color:#21252b; 
-	padding:20px; 
-	border-top:5px solid #1b9859;
-	}
-
-
-#footer a{
-	color:#fecb00;
-	}
-
-#footer a:hover{
-	color:#FFFFFF;
-	text-decoration:none;
-	}
-
-
-.footer-pipe {
-	color:#CCC; margin:15px
-	}
-
-
-
 
 
 

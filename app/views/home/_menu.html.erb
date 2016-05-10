@@ -1,107 +1,73 @@
-<!-- /////////////////////  Top Contact Bar Start ////////////////////////////// -->
-<div class="container-fluid" id="social-header" >
-<div class="row"  style="background-color:#006464; min-height:50px;"> 
-    <div class="col-md-9" style="padding-top:10px;" id="top-header"> 
-    <span style="color:#2c93d5"> Follow us on </span> 
-    <a href="#"> <i class="fa fa-linkedin-square" style="font-size:24px; color:#FFF; "></i> </a> &nbsp;
-    <a href="#"> <i class="fa fa-facebook-square" style="font-size:24px; color:#FFF; "></i> </a> &nbsp;
-    <a href="#"> <i class="fa fa-twitter-square" style="font-size:24px; color:#FFF; "></i> </a>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <a href="#"><span> <i class="fa fa-phone" style="font-size:22px; color:#fff;"></i> </span> &nbsp;<span style= "color:#fff"> 9500722066</span></a>
-    &nbsp; &nbsp; 
-   <a href="mailto:reddiarcommunity@gmail.com"> <i class="fa fa-envelope" style="font-size:22px; color:#fff;"></i> &nbsp;<span style= "color:#fff"> reddiarcommunity@gmail.com</span>  </a>
+<div class="header-connect">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-8 col-xs-8">
+                <div class="header-call">
+                    <p>
+                        <span><i class="fa fa-cloud" aria-hidden="true"></i> +91 9500722066</span>&nbsp;
+                        <span><i class="fa fa-commenting-o" aria-hidden="true"></i> reddiarscommunity@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-3  col-xs-offset-1">
+                <div class="header-social">
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vine"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-<div class="col-md-3 text-right" style="padding-top:10px;">
-<% if current_user.present? %>
-  <%= link_to  profile_path(@profile), :class => "btn btn-success", :style => "color:#fff" do %>
-  <span class="glyphicon glyphicon-user"></span> Profile
-  <% end %>
-  <%= link_to destroy_user_session_path, :method => :delete, :class => "btn btn-success", :style => "color:#fff" do %>
-  <span class="glyphicon glyphicon-log-in"></span> logout 
-  <% end %>
-<% else %>
-  <%= link_to new_user_session_path,:class => "btn btn-success",:style => "color:#fff" do %>
-  <span class="glyphicon glyphicon-log-in"></span> login  <% end %>
-   <%= link_to  new_user_registration_path, :class => "btn btn-success", :style => "color:#fff" do %>
-  <span class="glyphicon glyphicon-user"></span> Sign Up<% end %>
-
-<% end %>
-</div>    
-
 </div>
-</div>
-<!-- /////////////////////  Top Contact Bar End ////////////////////////////// -->
 
-
-<!-- /////////////////////  Nav Bar Start  ////////////////////////////// -->
-<div class="container-fluid" >
-<div class="row">
-
-<nav class="navbar navbar-default" >
-  <div class="container-fluid" style="background-color:#ffffff;padding-left: 10px;">
+      <!-- <a class= "navbar-brand text-center" href="index.html"> <%#= image_tag("logo1.jpg", :alt => "rss feed") %></a> -->
+<nav class="navbar navbar-default">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header" >
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <div class="navbar-header" style="height:0px">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand text-center" href="index.html"  > <%= image_tag("logo.png", :alt => "rss feed") %></a>
+      <a class="navbar-brand text-center" href="index.html"  > <%= image_tag("logofinal1.png", :alt => "rss feed") %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-       <ul class="nav navbar-nav navbar-right">
-       <li class="active"><a href="#">Home</a></li>        
-        <li><a href="#">About Us </a></li>
-        <li><a href="#">Memebers List </a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">News and Events</a></li>
-        <li><a href="#">Contact Us </a></li>
+      <!-- <div class="button navbar-right">
+          <button class="navbar-btn nav-button login">Login</button>
+          <button class="navbar-btn nav-button">Sign up</button>
+      </div> -->
+      <div class="button navbar-right">
+        <% if current_user.present? %>
+          <%= link_to  profile_path(@profile), :class => "navbar-btn nav-button login", :style => "color:#fff" do %>
+          <span class="glyphicon glyphicon-user"></span> Profile
+          <% end %>
+          <%= link_to destroy_user_session_path, :method => :delete, :class => "navbar-btn nav-button", :style => "color:#fff" do %>
+          logout 
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path,:class => "navbar-btn nav-button login",:style => "color:#fff" do %>
+          <span class="glyphicon glyphicon-log-in"></span> login  <% end %>
+           <%= link_to  new_user_registration_path, :class => "navbar-btn nav-button", :style => "color:#fff" do %>
+          <span class="glyphicon glyphicon-user"></span> Sign Up<% end %>
+
+        <% end %>
+      </div>
+
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a class="active" href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT US</a></li>
         
-        </ul>
+      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-</div>
-</div>
-
-<style type="text/css">
-  /* ----------------  Nav Bar Start ------------------------------------- */
-
-.navbar {
-  border:none !important;
-  }
-
-.navbar-fixed-top {
-    min-height: 100px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 100px;
-}
-
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;}
-
-  #brand-logo {
-    height:40px !important;
-    width:126px !important;
-    vertical-align:top;
-    padding-top:0px !important;
-    margin:0px !important;
-    }
-
-  #social-header{
-    display:none;
-    }
-
-}
-
-</style>
