@@ -5,21 +5,27 @@ class UserRolesController < ApplicationController
   # GET /user_roles.json
   def index
     @user_roles = UserRole.all
+    @profile = current_user.profile
   end
 
   # GET /user_roles/1
   # GET /user_roles/1.json
   def show
+    @profile = current_user.profile 
   end
 
   # GET /user_roles/new
   def new
-    @users = User.where(id: current_user.id) 
+    @user_all = User.all
+    @profile = current_user.profile 
+    @users = User.where(id: current_user.id)
     @user_role = UserRole.new
   end
 
   # GET /user_roles/1/edit
   def edit
+    @profile = current_user.profile
+    @user_all = User.all
   end
 
   # POST /user_roles

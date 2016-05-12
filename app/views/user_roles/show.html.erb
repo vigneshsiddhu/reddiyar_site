@@ -1,9 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @user_role.role %>
-</p>
+<%= render 'home/headertop' %>
+<%= render 'home/sidemenu' %>
+  
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><%= link_to 'Profile', profile_path(@profile) %></li>
+      <li class="active">Edit</li>
+    </ol>
+  </div><!--/.row-->
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Successfully Applied</h1>
+    </div>
+  </div><!--/.row-->
+</div>
 
-<%= link_to 'Edit', edit_user_role_path(@user_role) %> |
-<%= link_to 'Back', user_roles_path %>
+<%#= link_to 'Edit', edit_user_role_path(@user_role) %> |
+<%#= link_to 'Back', user_roles_path %>
+
+
+  <div class="row">
+    <div class="col-md-8" style="float:right">
+      <div class="card">
+        <div id="menu1" class="admin_leftNav">
+          <div class="panel-body">
+            <div class="panel list-group">
+              <div class="content">
+                <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Name</label>
+                          <% if @user_role.user.profile.name.present? %>
+                          <input type="text" class="form-control" disabled value="<%= @user_role.user.profile.name %>">
+                          <% end %>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Role</label>
+                          <input type="text" class="form-control" disabled value="<%=  @user_role.role%>">
+                      </div>
+                  </div>
+                </div>
+               </div>
+            </div>
+        	</div>
+    	</div>
+      </div>
+	</div>
+</div>
+
+ 

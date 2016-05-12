@@ -1,4 +1,4 @@
-<%= form_for(@user_role) do |f| %>
+  <%= form_for(@user_role) do |f| %>
   <% if @user_role.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_role.errors.count, "error") %> prohibited this user_role from being saved:</h2>
@@ -11,13 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="form-group">
     <%= f.label :Name %><br>
-    <%= f.select :user_id,options_for_select(@users.map{ |user| [user.profile.name, user.id] }),{:class => "form-control"} %>
-    <%= f.label :role %><br>
-    <%= f.select :role,[["Super Admin", "super_admin"],["Admin", "admin"]],{},{:class => "form-control"} %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+      <%= f.select :user_id,options_for_select(@user_all.map{ |user| [user.profile.name, user.id] }), {},{:class => "form-control select2_search"} %>
+    </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="form-group">
+      <%= f.label :role %><br>
+      <%= f.select :role,[["Super Admin", "super_admin"],["Admin", "admin"]],{},{:class => "form-control"} %>
+    </div>
+    </div>
+    <div class="col-lg-2 col-md-6 col-sm-12">
+    <div class="form-group">
+      <div class="actions">
+        <%= f.submit 'Provide',:class => "btn btn-info btn-fill_show pull-right"%>
+      </div>
+    </div>
+    </div>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('.select2_search').select2({theme: "bootstrap"});
+</script>
