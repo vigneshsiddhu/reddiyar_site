@@ -44,28 +44,26 @@
       <div class="row">
       <br>
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 search-content">
-              <h2 class = "centered searchh2">Search People Here</h2>
+              <h2 class = "centered search2">Search People Here</h2>
               <hr>
               <div class="search-form">
-                  <form action="" class="form-inline">
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Enter Name">
+                    <div class="form-group">
+                      <div class = "col-lg-6">
+                      <%= form_tag '/homesearch', :method => "post" do %>
+                        <%= text_field_tag :name,nil, :class => "form-control",:placeholder => "Find People" %>
                       </div>
-                      <div class="form-group">
-                          <select name="" id="" class="form-control">
-                              <option selected>Select City</option>
-                              <option>Trichy</option>
-                              <option>Chennai</option>
-                          </select>
+                      <div class = "col-lg-2">
+                        <%= submit_tag 'search', class: 'navbar-btn nav-button login' %>
                       </div>
-
-                      <button class="navbar-btn nav-button login">Search</button>
-                  </form>
+                      <%end %>
+                    </div>
+                  
+                      <!-- <button class="">Search</button> -->
+              </div>
               </div>
           </div>
       </div>
     </div>
-  </div>
  
   <!-- Controls -->
  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -273,17 +271,17 @@ position: relative;
 .search-form {
   background-color: #fff;
   border-radius: 5px;
-  padding: 11px 20px;
+  padding: 11px 44px;
   height: 84px;
 }
-.form-inline .form-control, .form-inline .form-control {
+.form-control,.form-control {
   background: none repeat scroll 0 0 #eeeeee;
   border-radius: 1px;
   color: #333;
   font-style: italic;
   height: 40px;
-  margin-right: 10px;
-  width: 275px;
+  width: 325px;
+  margin-top: 7px;
 }
 .footer-area {
   background: #000;
