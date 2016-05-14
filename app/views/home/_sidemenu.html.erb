@@ -23,5 +23,17 @@
       <% end %>
     </li>
     <% end %>
+    <% if (current_user.user_roles.pluck(:role) & [0,1]).any? %>
+    <li>
+      <%= link_to new_user_role_path do %>
+        <i class="fa fa-envelope" aria-hidden="true"></i> Provide Access<span class="fa arrow"></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_roles_path do %>
+        <i class="fa fa-envelope" aria-hidden="true"></i>View Detials<span class="fa arrow"></span>
+      <% end %>
+    </li>
+    <% end %>
   </ul>
 </div><!--/.sidebar-->

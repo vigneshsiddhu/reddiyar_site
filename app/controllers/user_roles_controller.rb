@@ -6,6 +6,9 @@ class UserRolesController < ApplicationController
   def index
     @user_roles = UserRole.all
     @profile = current_user.profile
+    @total_profiles = Profile.all
+    @verified_profile = @total_profiles.where(verified: true).count
+    @unverified_profile = @total_profiles.where(verified: false).count
   end
 
   # GET /user_roles/1

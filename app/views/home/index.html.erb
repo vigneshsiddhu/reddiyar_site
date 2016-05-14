@@ -47,17 +47,23 @@
               <h2 class = "centered search2">Search People Here</h2>
               <hr>
               <div class="search-form">
-                  <form action="" class="form-inline">
-                      <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Enter Name">
+                    <div class="form-group">
+                      <div class = "col-lg-6">
+                      <%= form_tag '/homesearch', :method => "post" do %>
+                        <%= text_field_tag :name,nil, :class => "form-control",:placeholder => "Find People" %>
                       </div>
-                      <button class="navbar-btn nav-button login">Search</button>
-                  </form>
+                      <div class = "col-lg-2">
+                        <%= submit_tag 'search', class: 'navbar-btn nav-button login' %>
+                      </div>
+                      <%end %>
+                    </div>
+                  
+                      <!-- <button class="">Search</button> -->
+              </div>
               </div>
           </div>
       </div>
     </div>
-  </div>
  
   <!-- Controls -->
  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -268,13 +274,14 @@ position: relative;
   padding: 11px 44px;
   height: 84px;
 }
-.form-inline .form-control, .form-inline .form-control {
+.form-control,.form-control {
   background: none repeat scroll 0 0 #eeeeee;
   border-radius: 1px;
   color: #333;
   font-style: italic;
   height: 40px;
-  width: 285px;
+  width: 325px;
+  margin-top: 7px;
 }
 .footer-area {
   background: #000;
