@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profiles = Profile.where.not(user_id: current_user.id)
   end
-  
+
   def search
     @profiles = Profile.where("name LIKE ?", "%#{params["name"]}%")
   end
@@ -29,21 +29,23 @@ class ProfilesController < ApplicationController
   end
 
   def family_list
-    @family = []
-    family = current_user.profile.family_members
-    profile = Profile.where(id: family.pluck(:member_id))
-    family.each_with_index do |fam, i|
-      member = {
-        'profile_id' => profile[i].id,
-        'name' => profile[i].name,
-        'email' =>  profile[i].user.email,
-        'relationship' => fam.relationship,
-        'gender' => profile[i].gender,
-        'dob' => profile[i].dob, 
-        'image' => profile[i].image
-      }
-      @family << member
-    end
+    @family_members = current_user.profile.family_members
+    # @family = []
+    # family = current_user.profile.family_members
+    # profile = Profile.where(id: family.pluck(:member_id).uniq)
+    # family.each_with_index do |fam, i|
+    #   binding.pry
+    #   member = {
+    #     'profile_id' => profile[i].id,
+    #     'name' => profile[i].name,
+    #     'email' =>  profile[i].user.email,
+    #     'relationship' => fam.relationship,
+    #     'gender' => profile[i].gender,
+    #     'dob' => profile[i].dob,
+    #     'image' => profile[i].image
+    #   }
+    #   @family << member
+    # end
   end
 
   def verify_profile

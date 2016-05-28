@@ -2,7 +2,7 @@
 
  <%= render 'menu' %>
 
-<!-- ///////////////////////////Slider Start /////////////////////////////// --> 
+<!-- ///////////////////////////Slider Start /////////////////////////////// -->
 <% if notice.present? %>
 <div class="alert fade in alert-success">
     <button class="close" data-dismiss="alert">×</button>
@@ -38,7 +38,7 @@
         <%= image_tag("slide2.jpg", :alt => "rss feed") %>
         </div>
   </div>
-
+</div>
   <div class="col-lg-12" style="background: #7fbbda none repeat scroll 0 0;">
     <div class="container">
       <div class="row">
@@ -57,14 +57,72 @@
                       </div>
                       <%end %>
                     </div>
-                  
+
                       <!-- <button class="">Search</button> -->
               </div>
               </div>
           </div>
       </div>
     </div>
- 
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+              <h2 class = "centered search2">Congratulation</h2>
+              <hr>
+      </div>
+            <div class="col-md-2 portfolio-item">
+                <a href="portfolio-item.html">
+                    <%= image_tag("neru.jpg", :alt => "rss feed", :class => "img-responsive", :width => 100, :height => 100) %>
+                </a>
+                <h3><a href="portfolio-item.html">Kn Nehru</a>
+                </h3>
+                <p>Thrichy(west), D.M.K</p>
+            </div>
+
+            <div class="col-md-2 portfolio-item">
+                <a href="portfolio-item.html">
+                    <%= image_tag("balakrishna.JPEG", :alt => "rss feed", :class => "img-responsive", :width => 100, :height => 100) %>
+                </a>
+                <h3><a href="portfolio-item.html">BalaKrishnan</a>
+                </h3>
+                <p>Hosur, A.D.M.K</p>
+            </div>
+
+            <div class="col-md-2 portfolio-item">
+                <a href="portfolio-item.html">
+                     <%= image_tag("KKSSR. Ramachandran.jpg", :alt => "rss feed", :class => "img-responsive", :width => 100, :height => 100) %>
+                </a>
+                <h3><a href="portfolio-item.html">KKSSR Ramachandrean</a>
+                </h3>
+                <p>Arrupukottai, D.M.K</p>
+            </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+    <div class="row">
+            <div class="col-md-2 portfolio-item1">
+                <a href="portfolio-item.html">
+                     <%= image_tag("RAJA.jpg", :alt => "rss feed", :class => "img-responsive", :width => 100, :height => 100) %>
+                </a>
+                <h3><a href="portfolio-item.html">S.R Raja</a>
+                </h3>
+                <p>Thambaram, D.M.K<p>
+            </div>
+
+            <div class="col-md-2 portfolio-item1">
+                <a href="portfolio-item.html">
+                     <%= image_tag("VARALAKSHMI.M.JPEG", :alt => "rss feed", :class => "img-responsive", :width => 100, :height => 100) %>
+                </a>
+                <h3><a href="portfolio-item.html">M.Varalakshmi</a>
+                </h3>
+                <p>Chengalpattu, D.M.K</p>
+            </div>
+
+        </div>
+      </div>
+
   <!-- Controls -->
  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
@@ -72,13 +130,13 @@
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-</div> <!-- Carousel -->
+
 
 
 </div>
 </div>
 
-<!-- ///////////////////////////Slider End /////////////////////////////// --> 
+<!-- ///////////////////////////Slider End /////////////////////////////// -->
 
 <!-- /////////////////////  Footer Start ////////////////////////////// -->
 <%= render 'footer' %>
@@ -206,7 +264,7 @@ position: relative;
   border-radius: 4px;
   box-shadow: none;
   border-color: #e7e7e7;
-  border-style: solid; 
+  border-style: solid;
   border-width: 1px;
 }
 .navbar .container{
@@ -298,7 +356,7 @@ position: relative;
 hr {
     display: block;
     height: 1px;
-    border: 0; 
+    border: 0;
     border-top: 1px solid #ccc;
     margin: 1em 0;
     padding: 0;
@@ -312,5 +370,15 @@ hr {
 }
 .centered {
     text-align: center;
+}
+.portfolio-item{
+  margin-left: 130px;
+  margin-top: 50px;
+  height: 250px;
+}
+.portfolio-item1{
+  margin-left: 130px;
+  margin-top: 0px;
+  height: 350px;
 }
 </style>
