@@ -1,6 +1,7 @@
 class Profile < ActiveRecord::Base
 	belongs_to :user
 	has_many :family_members
+	has_many :members, through: :family_members
 	has_many :educations
 	has_many :locations
 	has_many :occupations
