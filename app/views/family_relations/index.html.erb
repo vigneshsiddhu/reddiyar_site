@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Family Relations</h1>
+
+<%= link_to 'New Family relation', new_family_relation_path %>
+
+
+
+
+
+<%= render 'home/headertop' %>
+<%= render 'home/sidemenu' %>
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+  <div class="row">
+  <ol class="breadcrumb">
+  <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+  <li class="active">Family</li>
+  </ol>
+  </div><!--/.row-->
+
+  <div class="row">
+  <div class="col-lg-12">
+  <h1 class="page-header">My Family</h1>
+  </div>
+  </div><!--/.row-->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="panel list-group">
+          <div class="content">
+            <% @family_members.each do |member| %>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <% if member.family_image.present? %>
+                      <%= image_tag(member.family_image, width: '100%') %>
+                      <% end %>
+                      <a class="btn  btn-xs btn-block "><i class="fa fa-check-circle append-icon"></i>Profile Image</a>
+                    </div>
+                  </div>
+                  <h3><%= member.family_name %></h3>
+                  <!-- <h5><%#= member.family_user.email %></h5> -->
+                  <table class="table table-striped table-hover">
+                    <tbody>
+                      <% if member.family_dob.present? %>
+                      <tr>
+                        <td style="width:60%;">Birthday</td>
+                        <td><%= (member.family_dob.strftime("%B %d")) %></td>
+                      </tr>
+                      <% end %>
+                      <tr>
+                        <td>Relationship</td>
+                        <td><%= member.family_relationship %></td>
+                      </tr>
+                      <tr>
+                        <td>Gender</td>
+                        <td><%= member.family_gender %></td>
+                      </tr>
+                      <tr>
+                        <td>Age</td>
+                        <td><%= member.family_age %></td>
+                      </tr>
+                      <tr>
+                        <td>Education</td>
+                        <td><%= member.family_education %></td>
+                      </tr>
+                      <tr>
+                        <td>Occupation</td>
+                        <td><%= member.family_occupation %></td>
+                      </tr>
+                      <tr>
+                        <td>Blood Group</td>
+                        <td><%= member.family_blood_group %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <%= link_to 'Edit Profile', edit_profile_path(@profile), :class => "btn btn-info btn-fill_show" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

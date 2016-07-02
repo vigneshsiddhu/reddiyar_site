@@ -5,7 +5,10 @@ class Profile < ActiveRecord::Base
 	has_many :educations
 	has_many :locations
 	has_many :occupations
+	has_many :family_relations
 	has_paper_trail
+
+	accepts_nested_attributes_for :family_relations, allow_destroy: true
 	accepts_nested_attributes_for :family_members, allow_destroy: true
 	accepts_nested_attributes_for :educations, allow_destroy: true
 	accepts_nested_attributes_for :locations, allow_destroy: true

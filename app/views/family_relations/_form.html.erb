@@ -1,0 +1,17 @@
+<%= form_for(@family_relation) do |f| %>
+  <% if @family_relation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@family_relation.errors.count, "error") %> prohibited this family_relation from being saved:</h2>
+
+      <ul>
+      <% @family_relation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

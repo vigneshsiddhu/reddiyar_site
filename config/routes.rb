@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :family_relations
   resources :user_roles
   devise_for :users
   resources :family_members
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/admin/unverified_profiles' => 'profiles#unverified_profiles'
   get '/admin/verify_profile/:profile_id' => 'profiles#verify_profile', as: :verify_profile
-  get '/myfamily' => 'profiles#family_list'
+  get '/myfamily' => 'family_relations#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
