@@ -1,7 +1,7 @@
 <%= render 'home/headertop' %>
 <%= render 'home/sidemenu' %>
-  
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">     
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
@@ -9,13 +9,13 @@
       <li class="active">Edit</li>
     </ol>
   </div><!--/.row-->
-  
+
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Edit Profile</h1>
     </div>
   </div><!--/.row-->
-  
+
   <%= nested_form_for @profile do |f| %>
     <div class="row">
       <div class="col-lg-12">
@@ -167,7 +167,7 @@
                         <label>Category:</label>
                         <%#= occ.select :address_type,[["Residential", "Residential"],["Office", "Office"]],{},{:class => "form-control select1",:id => "marital_status"}%>
                         <%= occ.select :category,[["GOVERMENT SALARIED","goverment_salaried"],["SELF EMPLOYED BUSINESS","self_employed_business"],["SELF EMPLOYED PROFESSIONAL","self_employed_professional"],["SALARIED PROFESSIONAL","salaried_professional"],["RETIRED","retired"],["STUDENT","student"],["HOMEMAKER","homemaker"]],{},{:class => "form-control select1", :placeholder => "Occupation Category"} %>
-                         
+
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
@@ -191,18 +191,62 @@
               <a href="#" class="list-group-item" data-toggle="collapse" data-target="#RA5" data-parent="#menu1">Family Members</a>
               <div class="panel-body">
                 <div id="RA5" class="sublinks collapse in">
-                <%= f.fields_for :family_members do |fm| %>
+                <%= f.fields_for :family_relations do |fm| %>
+                <p>Enter Family Members Details</b>
                   <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
                         <label>Name:</label>
-                         <%= fm.select :member_id, options_for_select(@profiles.map{ |profile| [profile['name'], profile['id']] }), {}, {:class => "form-control select2_search"} %>
+                          <%= fm.text_field :family_name, :class => "form-control",:placeholder => "First Name" %>
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                       <div class="form-group">
-                        <label>Relationship:</label>
-                        <%= fm.select :relationship, [["Father", "Father"],["Mother", "Mother"],["Brother(Elder)", "Brother(Elder)"],["Brother(Younger)", "Brother(Younger)"],["Sister(Elder)", "Sister(Elder)"],["Sister(Younger)", "Sister(Younger)"]],{},{:class => "form-control select1"} %>
+                        <label>age:</label>
+                          <%= fm.text_field :family_age, :class => "form-control",:placeholder => "Age" %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                         <label>Date of Birth</label>
+                         <%= fm.text_field :family_dob, :class => "form-control dob1", :placeholder => "Select your Date of birth" %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>gender:</label>
+                           <%= fm.select :family_gender,[["Male", "Male"],["Female", "Female"]],{},{:class => "form-control select1"} %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>BloodGroup:</label>
+                           <%= fm.select :family_blood_group,[["A+", "A+"],["A-", "A-"],["B+", "B+"],["B-", "B-"],["O+", "O+"],["O-", "O-"],["AB+", "AB+"],["AB-", "AB-"]],{},{:class => "form-control select1", :include_blank => 'Choose your bloog group'} %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>RelationShip:</label>
+                          <%= fm.text_field :family_relationship, :class => "form-control", :placeholder => "Relationsship" %>
+
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Education:</label>
+                          <%= fm.text_field :family_education, :class => "form-control dob", :placeholder => "Education Details" %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                        <label>Occupation:</label>
+                           <%= fm.select :family_occupation,[["GOVERMENT SALARIED","goverment_salaried"],["SELF EMPLOYED BUSINESS","self_employed_business"],["SELF EMPLOYED PROFESSIONAL","self_employed_professional"],["SALARIED PROFESSIONAL","salaried_professional"],["RETIRED","retired"],["STUDENT","student"],["HOMEMAKER","homemaker"]],{},{:class => "form-control select1", :placeholder => "Occupation Category"} %>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                      <div class="form-group">
+                          <label>Profile Image:</label>
+                          <%= fm.file_field :family_image %>
                       </div>
                     </div>
                     <script type="text/javascript">
@@ -211,9 +255,9 @@
                     <i class="fa fa-times"></i> <%= fm.link_to_remove "Remove this member"%>
                   </div>
                 <% end %>
-                <%= f.link_to_add "Add Family Member",:family_members, :class => "btn btn-info btn-fill_show pull-right"  %>
+                <%= f.link_to_add "Add Family Member",:family_relations, :class => "btn btn-info btn-fill_show pull-right"  %>
                 </div>
-              </div>            
+              </div>
             </div>
           </div>
       </div>
@@ -228,6 +272,10 @@
       minimumResultsForSearch: -1
     });
     $('.dob').datetimepicker({
+      timepicker:false,
+      format:'d/m/Y'
+    });
+    $('.dob1').datetimepicker({
       timepicker:false,
       format:'d/m/Y'
     });

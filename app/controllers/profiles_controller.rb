@@ -112,6 +112,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_members_attributes:[:member_id, :relationship, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], locations_attributes:[:pin_code, :city, :district, :address, :address_type, :id, :_destroy], occupations_attributes:[:organisation, :category, :position, :id, :_destroy])
+      params.require(:profile).permit(:name, :mobile, :dob, :gender, :caste, :blood_group, :marital_status, :height, :weight, :image, family_relations_attributes:[:family_name,:family_age,:family_dob,:family_gender,:family_blood_group,:family_relationship,:family_education,:family_occupation,:family_image, :id, :_destroy], educations_attributes:[:institution, :year_of_completion, :type_of_education, :city, :id, :_destroy], locations_attributes:[:pin_code, :city, :district, :address, :address_type, :id, :_destroy], occupations_attributes:[:organisation, :category, :position, :id, :_destroy])
     end
 end
